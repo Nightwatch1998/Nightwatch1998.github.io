@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cesium 源码学习 | NightWatch</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="编程，从入门到入土">
+    
+    <link rel="preload" href="/assets/css/0.styles.b56dbf9d.css" as="style"><link rel="preload" href="/assets/js/app.3fc55435.js" as="script"><link rel="preload" href="/assets/js/2.60c6961f.js" as="script"><link rel="preload" href="/assets/js/33.3b6298d7.js" as="script"><link rel="prefetch" href="/assets/js/10.4cb9f53f.js"><link rel="prefetch" href="/assets/js/11.7136e929.js"><link rel="prefetch" href="/assets/js/12.c8f78052.js"><link rel="prefetch" href="/assets/js/13.306ae4ef.js"><link rel="prefetch" href="/assets/js/14.e10c6c0f.js"><link rel="prefetch" href="/assets/js/15.9ea6a4a5.js"><link rel="prefetch" href="/assets/js/16.c6f71748.js"><link rel="prefetch" href="/assets/js/17.e234a147.js"><link rel="prefetch" href="/assets/js/18.89362f1d.js"><link rel="prefetch" href="/assets/js/19.456c5798.js"><link rel="prefetch" href="/assets/js/20.d0d9675e.js"><link rel="prefetch" href="/assets/js/21.319e2a83.js"><link rel="prefetch" href="/assets/js/22.1f071df9.js"><link rel="prefetch" href="/assets/js/23.06002868.js"><link rel="prefetch" href="/assets/js/24.b23b118f.js"><link rel="prefetch" href="/assets/js/25.569be777.js"><link rel="prefetch" href="/assets/js/26.7358c9ed.js"><link rel="prefetch" href="/assets/js/27.84bc8875.js"><link rel="prefetch" href="/assets/js/28.c23eda26.js"><link rel="prefetch" href="/assets/js/29.467c75c8.js"><link rel="prefetch" href="/assets/js/3.2e32f70a.js"><link rel="prefetch" href="/assets/js/30.b035a8d7.js"><link rel="prefetch" href="/assets/js/31.b115957c.js"><link rel="prefetch" href="/assets/js/32.e9bab8d0.js"><link rel="prefetch" href="/assets/js/34.4cca70a1.js"><link rel="prefetch" href="/assets/js/35.cb122311.js"><link rel="prefetch" href="/assets/js/36.590489c9.js"><link rel="prefetch" href="/assets/js/37.29510619.js"><link rel="prefetch" href="/assets/js/38.ff37b2a6.js"><link rel="prefetch" href="/assets/js/39.ded21031.js"><link rel="prefetch" href="/assets/js/4.d765f3e9.js"><link rel="prefetch" href="/assets/js/40.5ac3222c.js"><link rel="prefetch" href="/assets/js/41.23d00799.js"><link rel="prefetch" href="/assets/js/42.e61c9517.js"><link rel="prefetch" href="/assets/js/43.1b62e4d0.js"><link rel="prefetch" href="/assets/js/44.4946ae6f.js"><link rel="prefetch" href="/assets/js/5.51618976.js"><link rel="prefetch" href="/assets/js/6.61e87507.js"><link rel="prefetch" href="/assets/js/7.4890c497.js"><link rel="prefetch" href="/assets/js/8.f653013e.js"><link rel="prefetch" href="/assets/js/9.58d2f9fb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b56dbf9d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">NightWatch</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Basic
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/Basic/CSS基础.html" class="nav-link">
+  CSS基础
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/CSS预处理器.html" class="nav-link">
+  CSS预处理器
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/HTTP+Css知识.html" class="nav-link">
+  HTTP+Css知识
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/JavaScript高级编程.html" class="nav-link">
+  JavaScript高级编程
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/Typescript项目配置.html" class="nav-link">
+  Typescript项目配置
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/前端面试八股文.html" class="nav-link">
+  前端面试八股文
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/front-end/NodeJS环境配置.html" class="nav-link">
+  NodeJS环境配置
+</a></li><li class="dropdown-item"><h4>
+          React
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/React/React.html" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/Vue/Vue.js设计与实现.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/front-end/Vue/Vue面试.html" class="nav-link">
+  Vue面试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          前端工程化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/前端工程化/webpack配置.html" class="nav-link">
+  webpack配置
+</a></li><li class="dropdown-subitem"><a href="/front-end/前端工程化/web面试八股文.html" class="nav-link">
+  web面试八股文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          性能优化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/性能优化/性能优化.html" class="nav-link">
+  性能优化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据格式
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/数据格式/OBS.html" class="nav-link">
+  OBS
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/Video.js介绍.html" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/ffmpeg工具.html" class="nav-link">
+  ffmpeg工具
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/视频流介绍.html" class="nav-link">
+  视频流介绍
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/Tomcat安装方式汇总.html" class="nav-link">
+  Tomcat安装方式汇总
+</a></li><li class="dropdown-item"><h4>
+          mysql
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL主从备份.html" class="nav-link">
+  MySQL主从备份
+</a></li><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL安装方式汇总.html" class="nav-link">
+  MySQL安装方式汇总
+</a></li><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL设置远程访问.html" class="nav-link">
+  MySQL设置远程访问
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/back-end/nvm使用教程.html" class="nav-link">
+  nvm使用教程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/ArcGIS教程.html" class="nav-link">
+  ArcGIS教程
+</a></li><li class="dropdown-item"><h4>
+          WebGIS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/WebGIS/CesiumLab学习.html" class="nav-link">
+  CesiumLab学习
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/Cesium源码学习.html" class="nav-link">
+  Cesium源码学习
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/GeoServer学习记录.html" class="nav-link">
+  GeoServer学习记录
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/在Vue中使用Cesium.html" class="nav-link">
+  在Vue中使用Cesium
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/gis/WebGL学习.html" class="nav-link">
+  WebGL学习
+</a></li><li class="dropdown-item"><h4>
+          地图学
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/地图学/地图投影.html" class="nav-link">
+  地图投影
+</a></li><li class="dropdown-subitem"><a href="/gis/地图学/地理坐标系统.html" class="nav-link">
+  地理坐标系统
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/数据库/PostGIS教程.html" class="nav-link">
+  PostGIS教程
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/others/MarkDown语法.html" class="nav-link">
+  MarkDown语法
+</a></li><li class="dropdown-item"><!----> <a href="/others/hexo博客配置.html" class="nav-link">
+  hexo博客配置
+</a></li><li class="dropdown-item"><!----> <a href="/others/npm常用命令.html" class="nav-link">
+  npm常用命令
+</a></li></ul></div></div><div class="nav-item"><a href="/gis/WebGIS/.html" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="/gis/WebGIS/.html" class="nav-link">
+  老婆专用
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Basic
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/Basic/CSS基础.html" class="nav-link">
+  CSS基础
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/CSS预处理器.html" class="nav-link">
+  CSS预处理器
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/HTTP+Css知识.html" class="nav-link">
+  HTTP+Css知识
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/JavaScript高级编程.html" class="nav-link">
+  JavaScript高级编程
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/Typescript项目配置.html" class="nav-link">
+  Typescript项目配置
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/前端面试八股文.html" class="nav-link">
+  前端面试八股文
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/front-end/NodeJS环境配置.html" class="nav-link">
+  NodeJS环境配置
+</a></li><li class="dropdown-item"><h4>
+          React
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/React/React.html" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/Vue/Vue.js设计与实现.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/front-end/Vue/Vue面试.html" class="nav-link">
+  Vue面试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          前端工程化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/前端工程化/webpack配置.html" class="nav-link">
+  webpack配置
+</a></li><li class="dropdown-subitem"><a href="/front-end/前端工程化/web面试八股文.html" class="nav-link">
+  web面试八股文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          性能优化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/性能优化/性能优化.html" class="nav-link">
+  性能优化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据格式
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/数据格式/OBS.html" class="nav-link">
+  OBS
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/Video.js介绍.html" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/ffmpeg工具.html" class="nav-link">
+  ffmpeg工具
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/视频流介绍.html" class="nav-link">
+  视频流介绍
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/Tomcat安装方式汇总.html" class="nav-link">
+  Tomcat安装方式汇总
+</a></li><li class="dropdown-item"><h4>
+          mysql
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL主从备份.html" class="nav-link">
+  MySQL主从备份
+</a></li><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL安装方式汇总.html" class="nav-link">
+  MySQL安装方式汇总
+</a></li><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL设置远程访问.html" class="nav-link">
+  MySQL设置远程访问
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/back-end/nvm使用教程.html" class="nav-link">
+  nvm使用教程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/ArcGIS教程.html" class="nav-link">
+  ArcGIS教程
+</a></li><li class="dropdown-item"><h4>
+          WebGIS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/WebGIS/CesiumLab学习.html" class="nav-link">
+  CesiumLab学习
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/Cesium源码学习.html" class="nav-link">
+  Cesium源码学习
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/GeoServer学习记录.html" class="nav-link">
+  GeoServer学习记录
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/在Vue中使用Cesium.html" class="nav-link">
+  在Vue中使用Cesium
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/gis/WebGL学习.html" class="nav-link">
+  WebGL学习
+</a></li><li class="dropdown-item"><h4>
+          地图学
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/地图学/地图投影.html" class="nav-link">
+  地图投影
+</a></li><li class="dropdown-subitem"><a href="/gis/地图学/地理坐标系统.html" class="nav-link">
+  地理坐标系统
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/数据库/PostGIS教程.html" class="nav-link">
+  PostGIS教程
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/others/MarkDown语法.html" class="nav-link">
+  MarkDown语法
+</a></li><li class="dropdown-item"><!----> <a href="/others/hexo博客配置.html" class="nav-link">
+  hexo博客配置
+</a></li><li class="dropdown-item"><!----> <a href="/others/npm常用命令.html" class="nav-link">
+  npm常用命令
+</a></li></ul></div></div><div class="nav-item"><a href="/gis/WebGIS/.html" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="/gis/WebGIS/.html" class="nav-link">
+  老婆专用
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Cesium 源码学习</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#项目结构" class="sidebar-link">项目结构</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#core" class="sidebar-link">Core</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#数学计算工具" class="sidebar-link">数学计算工具</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#地图场景相关" class="sidebar-link">地图场景相关</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#地理编码与计算" class="sidebar-link">地理编码与计算</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#数据结构与算法" class="sidebar-link">数据结构与算法</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#时间管理" class="sidebar-link">时间管理</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#事件系统" class="sidebar-link">事件系统</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#坐标系" class="sidebar-link">坐标系</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#图形渲染" class="sidebar-link">图形渲染</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#文件加载" class="sidebar-link">文件加载</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#格式化和解析" class="sidebar-link">格式化和解析</a></li></ul></li><li><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#render-进阶补充" class="sidebar-link">Render（进阶补充）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#scene-主要api" class="sidebar-link">Scene（主要API）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#gltf相关-补充" class="sidebar-link">GLTF相关（补充）</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#model相关-补充" class="sidebar-link">Model相关（补充）</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#camera相机" class="sidebar-link">Camera相机</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#primitive基本元素" class="sidebar-link">Primitive基本元素</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#scene对象" class="sidebar-link">Scene对象</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#globe对象" class="sidebar-link">Globe对象</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#material对象" class="sidebar-link">Material对象</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#各种地图provider" class="sidebar-link">各种地图Provider</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#scene场景内容" class="sidebar-link">Scene场景内容</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#几何图形定义" class="sidebar-link">几何图形定义</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#cesium-3d-tile" class="sidebar-link">Cesium 3D tile</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#其他" class="sidebar-link">其他</a></li></ul></li><li><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#datasources" class="sidebar-link">DataSources</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#定义几何图形与更新器" class="sidebar-link">定义几何图形与更新器</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#可视化器" class="sidebar-link">可视化器</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#entity" class="sidebar-link">Entity</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#矢量数据源-补充" class="sidebar-link">矢量数据源（补充）</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#其他-2" class="sidebar-link">其他</a></li></ul></li><li><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#shader" class="sidebar-link">Shader</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#documentation-文档" class="sidebar-link">Documentation 文档</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#其他-3" class="sidebar-link">其他</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#specs-测试" class="sidebar-link">Specs 测试</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#thirdparty-第三方库" class="sidebar-link">ThirdParty  第三方库</a></li><li class="sidebar-sub-header"><a href="/gis/WebGIS/Cesium%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0.html#apps-应用示例" class="sidebar-link">Apps 应用示例</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="cesium-源码学习"><a href="#cesium-源码学习" class="header-anchor">#</a> Cesium 源码学习</h1> <p>cesium是一个开源的地理可视化库，用于创建基于地球的应用程序。</p> <p>版本1.106.1</p> <h2 id="项目结构"><a href="#项目结构" class="header-anchor">#</a> 项目结构</h2> <ul><li>根目录结构</li></ul> <div class="language- extra-class"><pre class="language-text"><code>cesium
+├── Apps //这个文件夹包含了一些 Cesium 的示例应用程序，可以用于学习和参考
+├── Documentation //Cesium 的文档目录，包含了详细的 API 文档、教程和示例代码
+├── Specs // 存放了 Cesium 的单元测试规格文件
+├── ThirdParty //引用的第三方库
+├── Tools // 封装了一些工具
+├── launches // 配置ROS节点
+├── packages //Cesium 源码的目录，包含核心功能和模块
+└── travis // 一些自动化脚本
+</code></pre></div><ul><li>packages 目录结构</li></ul> <div class="language- extra-class"><pre class="language-text"><code>packages
+├── engine
+│   ├── Source
+│   │   ├── Assets // 包含了一些默认的资源文件，如纹理、模型等
+│   │   ├── Core // 核心模块，提供了基本的几何、矩阵运算、时间管理等功能
+│   │   ├── DataSources // 数据源相关
+│   │   ├── Renderer // 渲染引擎，负责将地球表面、模型、图像渲染到屏幕
+│   │   ├── Scene // 场景管理的模块，如相机控制、地形渲染、图像处理等
+│   │   ├── Shaders // 存放了用于渲染的 GLSL 着色器代码
+│   │   ├── ThirdParty // 使用的第三方库
+│   │   ├── Widget
+│   │   ├── Workers
+│   │   └── WorkersES6
+│   └── Specs
+│       ├── Core
+│       ├── DataSources
+│       ├── Renderer
+│       ├── Scene
+│       └── Widget
+└── widgets
+    └── Source // 控件源码
+</code></pre></div><h2 id="core"><a href="#core" class="header-anchor">#</a> Core</h2> <p>Core模块功能</p> <h3 id="数学计算工具"><a href="#数学计算工具" class="header-anchor">#</a> 数学计算工具</h3> <ul><li>向量操作</li> <li>矩阵操作</li> <li>四元数操作</li> <li>边界框计算</li> <li>几何转换和变换</li> <li>射线和平面计算</li> <li>几何插值和插值操作</li> <li>样条曲线</li> <li>多项式逼近</li></ul> <h3 id="地图场景相关"><a href="#地图场景相关" class="header-anchor">#</a> 地图场景相关</h3> <ul><li>Geometry基类和各种Geometry的定义</li> <li>地形的创建、填充、编码、状态等等</li> <li>视椎体几何体</li> <li>地形瓦片</li></ul> <h3 id="地理编码与计算"><a href="#地理编码与计算" class="header-anchor">#</a> 地理编码与计算</h3> <ul><li>地球定向参数</li> <li>椭圆和椭球体，椭球大地线、椭球等角线、椭球切平面等等</li> <li>方位角</li> <li>采样器</li> <li>地图投影</li></ul> <h3 id="数据结构与算法"><a href="#数据结构与算法" class="header-anchor">#</a> 数据结构与算法</h3> <ul><li>深浅拷贝</li> <li>对象的合并</li> <li>数组和列表操作</li> <li>堆和优先队列</li> <li>双端优先队列</li> <li>双向链表</li> <li>哈希表和字典操作</li> <li>二分搜索</li></ul> <h3 id="时间管理"><a href="#时间管理" class="header-anchor">#</a> 时间管理</h3> <ul><li>时间戳的处理和转换</li> <li>时间间隔的计算</li> <li>动画和插值操作</li> <li>时间格式化和解析</li></ul> <h3 id="事件系统"><a href="#事件系统" class="header-anchor">#</a> 事件系统</h3> <ul><li>事件的订阅和发布</li> <li>自定义事件的创建和处理</li> <li>事件监听和触发</li> <li>屏幕空间事件</li></ul> <h3 id="坐标系"><a href="#坐标系" class="header-anchor">#</a> 坐标系</h3> <ul><li>笛卡尔2、3、4维坐标系</li> <li>经纬度和地理坐标系之间的转换</li> <li>笛卡尔坐标系和地理坐标系之间的转换</li> <li>屏幕坐标系和地理坐标系之间的转换</li></ul> <h3 id="图形渲染"><a href="#图形渲染" class="header-anchor">#</a> 图形渲染</h3> <ul><li>颜色处理和转换</li> <li>图像纹理操作</li></ul> <h3 id="文件加载"><a href="#文件加载" class="header-anchor">#</a> 文件加载</h3> <ul><li>图片加载和处理</li> <li>文本文件加载和解析</li> <li>模型文件加载和渲染</li></ul> <h3 id="格式化和解析"><a href="#格式化和解析" class="header-anchor">#</a> 格式化和解析</h3> <ul><li>数值和字符串的格式化</li> <li>坐标和时间的解析</li> <li>数据格式的解析和转换</li></ul> <p>主要包括四大块：数学工具和函数、地球椭球模型、地图场景元素、数据结构和算法。</p> <h2 id="render-进阶补充"><a href="#render-进阶补充" class="header-anchor">#</a> Render（进阶补充）</h2> <p><code>Render</code> 模块涉及地理可视化场景的渲染和渲染管道的管理。该模块包含了与图形渲染相关的功能和类。以下是 <code>Render</code> 模块的一些主要部分和功能：</p> <ul><li><strong>渲染管道（Render Pipeline）</strong>: <code>Render</code> 模块定义了一个渲染管道，用于管理场景中各个渲染阶段的执行顺序和设置。渲染管道包括几何处理、光照计算、阴影投射、纹理渲染等多个阶段，以生成最终的可视化效果。</li> <li><strong>渲染状态（Render State）</strong>: <code>Render</code> 模块提供了管理渲染状态的功能，包括深度测试、融合模式、剔除模式等。通过控制渲染状态，可以实现场景中的透明效果、深度排序等功能。</li> <li><strong>着色器程序（Shader Program）</strong>: <code>Render</code> 模块定义了用于渲染的着色器程序。着色器程序包含了顶点着色器和片元着色器，用于处理场景中的几何形状和材质的渲染。</li> <li><strong>帧缓冲（Frame Buffer）</strong>: <code>Render</code> 模块提供了帧缓冲对象的创建和管理，用于将渲染结果输出到特定的纹理或缓冲区中。</li> <li><strong>纹理渲染（Texture Rendering）</strong>: <code>Render</code> 模块包含了将纹理应用于几何体并进行渲染的功能。这涉及将纹理映射到三维物体表面，并根据材质属性和光照计算生成最终的渲染结果。</li> <li><strong>光照和阴影（Lighting and Shadows）</strong>: <code>Render</code> 模块定义了光照模型和阴影计算的功能。它包括了各种光源类型的支持（如平行光、点光源等），以及实现阴影投射的算法。</li> <li><strong>后期处理（Post-processing）</strong>: <code>Render</code> 模块还提供了一些后期处理效果的功能，如景深效果、辉光效果、色彩校正等。这些效果可以在最终渲染之后应用于场景，以增强可视化效果。</li> <li>缓冲区、帧缓冲区</li> <li>清除命令、计算命令、绘制命令</li> <li>上下文</li> <li>立方体贴图</li> <li>采样器</li> <li>着色器的构建器，着色器缓存。便于编写着色器程序</li> <li>纹理缓存</li> <li>顶点数组</li></ul> <h2 id="scene-主要api"><a href="#scene-主要api" class="header-anchor">#</a> Scene（主要API）</h2> <p><code>Scene</code> 模块涉及地理可视化场景的管理、渲染和交互。该模块包含了与场景相关的功能和类。以下是 <code>Scene</code> 模块的一些主要部分和功能：</p> <h3 id="gltf相关-补充"><a href="#gltf相关-补充" class="header-anchor">#</a> GLTF相关（补充）</h3> <ul><li>gltf管线</li> <li>各种gltf加载器</li> <li>添加缓冲区、默认值、额外信息</li> <li>添加、移除扩展</li></ul> <h3 id="model相关-补充"><a href="#model相关-补充" class="header-anchor">#</a> Model相关（补充）</h3> <ul><li>模型动画</li> <li>模型实例</li> <li>模型外观</li> <li>模型网格</li> <li>模型节点</li></ul> <h3 id="camera相机"><a href="#camera相机" class="header-anchor">#</a> Camera相机</h3> <p>Camera源码4000行，定义了大量使用相机的函数</p> <p>Camera相机、相机事件、飞行路径</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Camera构造函数</span>
+<span class="token keyword">function</span> <span class="token function">Camera</span><span class="token punctuation">(</span><span class="token parameter">scene</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">defined</span><span class="token punctuation">(</span>scene<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">DeveloperError</span><span class="token punctuation">(</span><span class="token string">&quot;scene is required.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_scene <span class="token operator">=</span> scene<span class="token punctuation">;</span>
+
+  <span class="token comment">// 变换矩阵</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_transform <span class="token operator">=</span> Matrix4<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span>Matrix4<span class="token punctuation">.</span><span class="token constant">IDENTITY</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_invTransform <span class="token operator">=</span> Matrix4<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span>Matrix4<span class="token punctuation">.</span><span class="token constant">IDENTITY</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_actualTransform <span class="token operator">=</span> Matrix4<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span>Matrix4<span class="token punctuation">.</span><span class="token constant">IDENTITY</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_actualInvTransform <span class="token operator">=</span> Matrix4<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span>Matrix4<span class="token punctuation">.</span><span class="token constant">IDENTITY</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_transformChanged <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 相机的属性</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>position <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cartesian3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 相机位置</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>direction <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cartesian3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 视图方向</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>up <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cartesian3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token keyword">this</span><span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cartesian3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>frustum <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PerspectiveFrustum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 视图区域</span>
+
+  <span class="token comment">// 一些默认姿态参数</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>defaultMoveAmount <span class="token operator">=</span> <span class="token number">100000.0</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>defaultLookAmount <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">/</span> <span class="token number">60.0</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>defaultRotateAmount <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">/</span> <span class="token number">3600.0</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>defaultZoomAmount <span class="token operator">=</span> <span class="token number">100000.0</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>maximumZoomFactor <span class="token operator">=</span> <span class="token number">1.5</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 运动相关的事件</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_moveStart <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_moveEnd <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_changed <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 视图矩阵</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_viewMatrix <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Matrix4</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_invViewMatrix <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Matrix4</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">updateViewMatrix</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 场景模式</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_mode <span class="token operator">=</span> SceneMode<span class="token punctuation">.</span><span class="token constant">SCENE3D</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_modeChanged <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token comment">// 投影</span>
+  <span class="token keyword">const</span> projection <span class="token operator">=</span> scene<span class="token punctuation">.</span>mapProjection<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_projection <span class="token operator">=</span> projection<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_maxCoord <span class="token operator">=</span> projection<span class="token punctuation">.</span><span class="token function">project</span><span class="token punctuation">(</span>
+    <span class="token keyword">new</span> <span class="token class-name">Cartographic</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">,</span> CesiumMath<span class="token punctuation">.</span><span class="token constant">PI_OVER_TWO</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_max2Dfrustum <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 设置默认视图</span>
+  <span class="token function">rectangleCameraPosition3D</span><span class="token punctuation">(</span>
+    <span class="token keyword">this</span><span class="token punctuation">,</span>
+    Camera<span class="token punctuation">.</span><span class="token constant">DEFAULT_VIEW_RECTANGLE</span><span class="token punctuation">,</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>position<span class="token punctuation">,</span>
+    <span class="token boolean">true</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> mag <span class="token operator">=</span> Cartesian3<span class="token punctuation">.</span><span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  mag <span class="token operator">+=</span> mag <span class="token operator">*</span> Camera<span class="token punctuation">.</span><span class="token constant">DEFAULT_VIEW_FACTOR</span><span class="token punctuation">;</span>
+  Cartesian3<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>position<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  Cartesian3<span class="token punctuation">.</span><span class="token function">multiplyByScalar</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>position<span class="token punctuation">,</span> mag<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 相机航线预加载</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">canPreloadFlight</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 更新相机的变化</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">_updateCameraChanged</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 定义相机原型对象</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperties</span><span class="token punctuation">(</span><span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 变换矩阵</span>
+  <span class="token literal-property property">transform</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_transform<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 逆变换矩阵</span>
+  <span class="token literal-property property">inverseTransform</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">updateMembers</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_invTransform<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 视图矩阵</span>
+  <span class="token literal-property property">viewMatrix</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">updateMembers</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_viewMatrix<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 相机制图位置</span>
+  <span class="token literal-property property">positionCartographic</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">updateMembers</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_positionCartographic<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 相机的世界坐标</span>
+  <span class="token literal-property property">positionWC</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">updateMembers</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_positionWC<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 相机的方向参数</span>
+  <span class="token literal-property property">directionWC</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">updateMembers</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_directionWC<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 相机的姿态</span>
+  <span class="token literal-property property">heading</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">pitch</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">roll</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 相机移动相关的事件</span>
+  <span class="token literal-property property">moveStart</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_moveStart<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">moveEnd</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_moveEnd<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">changed</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_changed<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 设置相机的位置、朝向和变换矩阵</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">setView</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 相机飞回Home视图</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">flyHome</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">duration</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 世界坐标转相机坐标</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">worldToCameraCoordinates</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">cartesian<span class="token punctuation">,</span> result</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 沿着某个方向运移动</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">move</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">direction<span class="token punctuation">,</span> amount</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 
+<span class="token comment">// 相机看向目标位置</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">look</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">axis<span class="token punctuation">,</span> angle</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 
+<span class="token comment">// 从目标位置观察</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">lookAt</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> offset</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 相机沿着坐标轴旋转</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">rotate</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">axis<span class="token punctuation">,</span> angle</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 
+
+<span class="token comment">// 拉近视角</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">zoomIn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">amount</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 拉远视角</span>
+<span class="token class-name">Camera</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">zoomOut</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">amount</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 还有很多其他函数补充</span>
+</code></pre></div><h3 id="primitive基本元素"><a href="#primitive基本元素" class="header-anchor">#</a> Primitive基本元素</h3> <p>primitive描述场景中的几何图形，可以是单一的也可以是多个。primitive将geometry和appearance结合，appearance包含材质和渲染状态。</p> <p>将多个实例组合为一个primitive可以提升性能</p> <p>2500行</p> <h3 id="scene对象"><a href="#scene对象" class="header-anchor">#</a> Scene对象</h3> <p>4000多行</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Scene是包含了所有3D图形对象和状态的Cesium虚拟场景</span>
+<span class="token keyword">function</span> <span class="token function">Scene</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 创建上下文</span>
+  <span class="token keyword">const</span> canvas <span class="token operator">=</span> options<span class="token punctuation">.</span>canvas<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> contextOptions <span class="token operator">=</span> <span class="token function">clone</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>contextOptions<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Context</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> contextOptions<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 定义实例变量，但是通过原型对象的属性访问</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_id <span class="token operator">=</span> <span class="token function">createGuid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_jobScheduler <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JobScheduler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+
+  <span class="token comment">// 定义实例属性members</span>
+  <span class="token comment">// 用户输入后是否立即完成过渡动画</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>completeMorphOnUserInput <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token comment">// 过度开始事件</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>morphStart <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 过度完成事件</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>morphComplete <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 天空盒</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>skyBox <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token comment">// 大气层</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>skyAtmosphere <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token comment">// 太阳</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>sun <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token comment">// 月亮</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>moon <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token comment">// 雾</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>fog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Fog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 没有天空盒时的背景色</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> Color<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span>Color<span class="token punctuation">.</span><span class="token constant">BLACK</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 过渡相关的参数</span>
+  <span class="token comment">// 过渡动画的时间</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>morphTime <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>farToNearRatio <span class="token operator">=</span> <span class="token number">1000.0</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>logarithmicDepthFarToNearRatio <span class="token operator">=</span> <span class="token number">1e9</span><span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+
+  <span class="token comment">// 允许选用深度缓冲区</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>useDepthPicking <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token comment">// 选用半透明深度</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>pickTranslucentDepth <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token comment">// 相机等待时间</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>cameraEventWaitTime <span class="token operator">=</span> <span class="token number">500.0</span><span class="token punctuation">;</span>
+  <span class="token comment">// 阴影地图</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>shadowMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShadowMap</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">context</span><span class="token operator">:</span> context<span class="token punctuation">,</span>
+    <span class="token literal-property property">lightCamera</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_shadowMapCamera<span class="token punctuation">,</span>
+    <span class="token literal-property property">enabled</span><span class="token operator">:</span> <span class="token function">defaultValue</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>shadows<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 跟踪每一帧的环境状态</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_environmentState <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+  <span class="token comment">// ...</span>
+
+  <span class="token comment">// 光照</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>light <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SunLight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 定义原型对象的属性</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperties</span><span class="token punctuation">(</span><span class="token class-name">Scene</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">// 绑定的canvas元素</span>
+  <span class="token literal-property property">canvas</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_canvas<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 绘制缓冲区高度</span>
+  <span class="token literal-property property">drawingBufferHeight</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_context<span class="token punctuation">.</span>drawingBufferHeight<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 绘制缓冲区宽度</span>
+  <span class="token literal-property property">drawingBufferWidth</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_context<span class="token punctuation">.</span>drawingBufferWidth<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// cube map一个边的最大像素长度</span>
+  <span class="token literal-property property">maximumCubeMapSize</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> ContextLimits<span class="token punctuation">.</span>maximumCubeMapSize<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 支持位置选择</span>
+  <span class="token literal-property property">pickPositionSupported</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_context<span class="token punctuation">.</span>depthTexture<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 深度测试椭球</span>
+  <span class="token literal-property property">globe</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_globe<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">globe</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_globe <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_globe <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_globe<span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_globe <span class="token operator">=</span> globe<span class="token punctuation">;</span>
+
+      <span class="token function">updateGlobeListeners</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> globe<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 基本图元的集合</span>
+  <span class="token literal-property property">primitives</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_primitives<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 场景的相机</span>
+  <span class="token literal-property property">camera</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_view<span class="token punctuation">.</span>camera<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">camera</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// For internal use only. Documentation is still @readonly.</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_view<span class="token punctuation">.</span>camera <span class="token operator">=</span> camera<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 场景的视图</span>
+  <span class="token literal-property property">view</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_view<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">view</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// For internal use only. Documentation is still @readonly.</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_view <span class="token operator">=</span> view<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 地图投影</span>
+  <span class="token literal-property property">mapProjection</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_mapProjection<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 任务调度器</span>
+  <span class="token literal-property property">jobScheduler</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_jobScheduler<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 帧状态</span>
+  <span class="token literal-property property">frameState</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_frameState<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 影像图层</span>
+  <span class="token literal-property property">imageryLayers</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">defined</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>globe<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>globe<span class="token punctuation">.</span>imageryLayers<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 环境状态</span>
+  <span class="token literal-property property">environmentState</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_environmentState<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 上下文对象</span>
+  <span class="token literal-property property">context</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_context<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// 接下来定义原型方法</span>
+<span class="token comment">// 是否支持纹理格式压缩</span>
+<span class="token class-name">Scene</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getCompressedTextureFormatSupported</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">format</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 更新和渲染场景，一般会自动调用</span>
+<span class="token class-name">Scene</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">render</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 强制渲染</span>
+<span class="token class-name">Scene</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">forceRender</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 捕获窗口中的单个元素</span>
+<span class="token class-name">Scene</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">pick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">windowPosition<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 捕获窗口中的若干个元素</span>
+<span class="token class-name">Scene</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">drillPick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">windowPosition<span class="token punctuation">,</span> limit<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 捕获大地坐标</span>
+<span class="token class-name">Scene</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">pickPositionWorldCoordinates</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 捕获笛卡尔坐标</span>
+<span class="token class-name">Scene</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">pickPosition</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">windowPosition<span class="token punctuation">,</span> result</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 通过射线捕获</span>
+<span class="token class-name">Scene</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">pickFromRay</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ray<span class="token punctuation">,</span> objectsToExclude<span class="token punctuation">,</span> width</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 还有若干函数...</span>
+
+</code></pre></div><h3 id="globe对象"><a href="#globe对象" class="header-anchor">#</a> Globe对象</h3> <h3 id="material对象"><a href="#material对象" class="header-anchor">#</a> Material对象</h3> <h3 id="各种地图provider"><a href="#各种地图provider" class="header-anchor">#</a> 各种地图Provider</h3> <h3 id="scene场景内容"><a href="#scene场景内容" class="header-anchor">#</a> Scene场景内容</h3> <ul><li>Light光源</li> <li>粒子系统</li> <li>阴影</li> <li>地形、地形数据、地形编码、地形填充网格</li> <li>纹理、纹理缓存</li> <li>地球、月球、太阳</li> <li>场景模式、场景变换</li></ul> <h3 id="几何图形定义"><a href="#几何图形定义" class="header-anchor">#</a> 几何图形定义</h3> <ul><li>平面、裁剪平面</li> <li>点、点云</li> <li>多边形、多边形几何体</li> <li>折线、折线几何体</li> <li>球体、球面</li></ul> <h3 id="cesium-3d-tile"><a href="#cesium-3d-tile" class="header-anchor">#</a> Cesium 3D tile</h3> <ul><li><p>3D tile 上下文</p></li> <li><p>3D tile 集合的操作</p></li> <li><p>3D tile 样式</p></li> <li><p>Tileset3DTile 瓦片集合</p> <ul><li>上下文</li> <li>要素</li> <li>层次结构</li> <li>标签</li> <li>图元</li></ul></li></ul> <h3 id="其他"><a href="#其他" class="header-anchor">#</a> 其他</h3> <ul><li>图层
+<ul><li>各种地图Provider</li></ul></li> <li>隐式内容
+<ul><li>隐式3D  tile</li> <li>隐式子树</li></ul></li> <li>各种数据加载器loader</li> <li>后期处理</li></ul> <p>投影、坐标系等等</p> <p>Scene模块主要包含了模型、gltf、3Dtiles、几何图形、场景等等。</p> <h2 id="datasources"><a href="#datasources" class="header-anchor">#</a> DataSources</h2> <p><code>Data Source</code> 模块是用于加载和管理地理数据源的模块。它提供了一种统一的方式来加载、处理和显示不同类型的地理数据。以下是 <code>Data Source</code> 模块的一些主要部分和功能：</p> <h3 id="定义几何图形与更新器"><a href="#定义几何图形与更新器" class="header-anchor">#</a> 定义几何图形与更新器</h3> <p>几何图形包含：</p> <ul><li>广告牌</li> <li>3Dtileset</li> <li>圆柱、椭圆、椭球</li> <li>平面、多边形、折线</li></ul> <p>以椭球为例：</p> <ul><li>首先是定义几何图形</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 定义了椭球几何体的属性，并进行属性合并</span>
+<span class="token keyword">function</span> <span class="token function">EllipsoidGraphics</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_definitionChanged <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_show <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_showSubscription <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_radii <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token operator">...</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span><span class="token function">defaultValue</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> defaultValue<span class="token punctuation">.</span><span class="token constant">EMPTY_OBJECT</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 在原型对象上定义属性描述符</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperties</span><span class="token punctuation">(</span><span class="token class-name">EllipsoidGraphics</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">definitionChanged</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_definitionChanged<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 封装了属性描述符函数</span>
+  <span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token function">createPropertyDescriptor</span><span class="token punctuation">(</span><span class="token string">&quot;show&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">radii</span><span class="token operator">:</span> <span class="token function">createPropertyDescriptor</span><span class="token punctuation">(</span><span class="token string">&quot;radii&quot;</span><span class="token punctuation">)</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 定义clone函数</span>
+<span class="token class-name">EllipsoidGraphics</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">clone</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">defined</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">EllipsoidGraphics</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  result<span class="token punctuation">.</span>show <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>show<span class="token punctuation">;</span>
+  result<span class="token punctuation">.</span>radii <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>radii<span class="token punctuation">;</span>
+  result<span class="token punctuation">.</span>innerRadii <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>innerRadii<span class="token punctuation">;</span>
+  <span class="token operator">...</span>
+  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 属性合并函数</span>
+<span class="token class-name">EllipsoidGraphics</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">merge</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">source</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//&gt;&gt;includeStart('debug', pragmas.debug);</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">defined</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">DeveloperError</span><span class="token punctuation">(</span><span class="token string">&quot;source is required.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//&gt;&gt;includeEnd('debug');</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>show <span class="token operator">=</span> <span class="token function">defaultValue</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>show<span class="token punctuation">,</span> source<span class="token punctuation">.</span>show<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>radii <span class="token operator">=</span> <span class="token function">defaultValue</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>radii<span class="token punctuation">,</span> source<span class="token punctuation">.</span>radii<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>heightReference <span class="token operator">=</span> <span class="token function">defaultValue</span><span class="token punctuation">(</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>heightReference<span class="token punctuation">,</span>
+    source<span class="token punctuation">.</span>heightReference
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>distanceDisplayCondition <span class="token operator">=</span> <span class="token function">defaultValue</span><span class="token punctuation">(</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>distanceDisplayCondition<span class="token punctuation">,</span>
+    source<span class="token punctuation">.</span>distanceDisplayCondition
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// 导出几何体对象</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> EllipsoidGraphics<span class="token punctuation">;</span>  
+</code></pre></div><ul><li>然后是椭球的几何图形更新器</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 封账椭球体几何属性</span>
+<span class="token keyword">function</span> <span class="token function">EllipsoidGeometryOptions</span><span class="token punctuation">(</span><span class="token parameter">entity</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> entity<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>vertexFormat <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>radii <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 定义更新器</span>
+<span class="token keyword">function</span> <span class="token function">EllipsoidGeometryUpdater</span><span class="token punctuation">(</span><span class="token parameter">entity<span class="token punctuation">,</span> scene</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 绑定基类更新器的this，并传递参数</span>
+  <span class="token function">GeometryUpdater</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">entity</span><span class="token operator">:</span> entity<span class="token punctuation">,</span>
+    <span class="token literal-property property">scene</span><span class="token operator">:</span> scene<span class="token punctuation">,</span>
+    <span class="token literal-property property">geometryOptions</span><span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">EllipsoidGeometryOptions</span><span class="token punctuation">(</span>entity<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">geometryPropertyName</span><span class="token operator">:</span> <span class="token string">&quot;ellipsoid&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">observedPropertyNames</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;availability&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;position&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;orientation&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;ellipsoid&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_onEntityPropertyChanged</span><span class="token punctuation">(</span>
+    entity<span class="token punctuation">,</span>
+    <span class="token string">&quot;ellipsoid&quot;</span><span class="token punctuation">,</span>
+    entity<span class="token punctuation">.</span>ellipsoid<span class="token punctuation">,</span>
+    <span class="token keyword">undefined</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+    
+<span class="token comment">// 定义原型属性</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperties</span><span class="token punctuation">(</span><span class="token class-name">EllipsoidGeometryUpdater</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">terrainOffsetProperty</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_terrainOffsetProperty<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 创建几何体填充实例</span>
+<span class="token class-name">EllipsoidGeometryUpdater</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">createFillGeometryInstance</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 创建几何体外边线实例</span>
+<span class="token class-name">EllipsoidGeometryUpdater</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">createOutlineGeometryInstance</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 计算中心</span>
+<span class="token class-name">EllipsoidGeometryUpdater</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>_computeCenter
+<span class="token comment">// 是否隐藏</span>
+<span class="token class-name">EllipsoidGeometryUpdater</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>_isHidden
+<span class="token comment">// 是否开启动态</span>
+<span class="token class-name">EllipsoidGeometryUpdater</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>_isDynamic
+<span class="token comment">// 设置静态属性</span>
+<span class="token class-name">EllipsoidGeometryUpdater</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>_setStaticOptions
+<span class="token comment">// 属性更新事件</span>
+<span class="token class-name">EllipsoidGeometryUpdater</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>_onEntityPropertyChanged <span class="token operator">=</span> heightReferenceOnEntityPropertyChanged<span class="token punctuation">;</span>
+<span class="token comment">// 动态几何更新器</span>
+EllipsoidGeometryUpdater<span class="token punctuation">.</span>DynamicGeometryUpdater <span class="token operator">=</span> DynamicEllipsoidGeometryUpdater<span class="token punctuation">;</span>
+<span class="token comment">// 定义更新函数</span>
+<span class="token class-name">DynamicEllipsoidGeometryUpdater</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">update</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><h3 id="可视化器"><a href="#可视化器" class="header-anchor">#</a> 可视化器</h3> <p>包含广告牌、标签、模型、路径、点、几何体等等</p> <p>以几何体为例</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 引入各种updater</span>
+<span class="token keyword">const</span> geometryUpdaters <span class="token operator">=</span> <span class="token punctuation">[</span>
+  BoxGeometryUpdater<span class="token punctuation">,</span>
+  CylinderGeometryUpdater<span class="token punctuation">,</span>
+  CorridorGeometryUpdater<span class="token punctuation">,</span>
+  EllipseGeometryUpdater<span class="token punctuation">,</span>
+  EllipsoidGeometryUpdater<span class="token punctuation">,</span>
+  PlaneGeometryUpdater<span class="token punctuation">,</span>
+  PolygonGeometryUpdater<span class="token punctuation">,</span>
+  PolylineVolumeGeometryUpdater<span class="token punctuation">,</span>
+  RectangleGeometryUpdater<span class="token punctuation">,</span>
+  WallGeometryUpdater<span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 构建几何体updater的几何对象</span>
+<span class="token keyword">function</span> <span class="token function">GeometryUpdaterSet</span><span class="token punctuation">(</span><span class="token parameter">entity<span class="token punctuation">,</span> scene</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>entity <span class="token operator">=</span> entity<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>scene <span class="token operator">=</span> scene<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> updaters <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>geometryUpdaters<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 几何体发生变化的事件</span>
+  <span class="token keyword">const</span> geometryChanged <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 触发事件，并传递几何体参数</span>
+  <span class="token keyword">function</span> <span class="token function">raiseEvent</span><span class="token punctuation">(</span><span class="token parameter">geometry</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    geometryChanged<span class="token punctuation">.</span><span class="token function">raiseEvent</span><span class="token punctuation">(</span>geometry<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> eventHelper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventHelper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 循环场景更新器实例</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> updaters<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> updater <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">geometryUpdaters</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">(</span>entity<span class="token punctuation">,</span> scene<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    eventHelper<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>updater<span class="token punctuation">.</span>geometryChanged<span class="token punctuation">,</span> raiseEvent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    updaters<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> updater<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>updaters <span class="token operator">=</span> updaters<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>geometryChanged <span class="token operator">=</span> geometryChanged<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>eventHelper <span class="token operator">=</span> eventHelper<span class="token punctuation">;</span>
+  <span class="token comment">//  注册实体定义变化的订阅</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_removeEntitySubscription <span class="token operator">=</span> entity<span class="token punctuation">.</span>definitionChanged<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>
+    <span class="token class-name">GeometryUpdaterSet</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>_onEntityPropertyChanged<span class="token punctuation">,</span>
+    <span class="token keyword">this</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 属性改变触发</span>
+<span class="token class-name">GeometryUpdaterSet</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">_onEntityPropertyChanged</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 封装foreach函数</span>
+<span class="token class-name">GeometryUpdaterSet</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">forEach</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 销毁函数</span>
+<span class="token class-name">GeometryUpdaterSet</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">destory</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 定义visualizer构造器</span>
+<span class="token keyword">function</span> <span class="token function">GeometryVisualizer</span><span class="token punctuation">(</span>
+  <span class="token parameter">scene<span class="token punctuation">,</span>
+  entityCollection<span class="token punctuation">,</span>
+  primitives<span class="token punctuation">,</span>
+  groundPrimitives</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 更新函数，更新所有的pimitives</span>
+<span class="token class-name">GeometryVisualizer</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">update</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 获取边界球</span>
+<span class="token class-name">GeometryVisualizer</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getBoundingSphere</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 销毁所有的primitives</span>
+<span class="token class-name">GeometryVisualizer</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">destory</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 定义了若干事件</span>
+GeometryVisualizer<span class="token punctuation">.</span><span class="token function-variable function">_onGeometryChanged</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+GeometryVisualizer<span class="token punctuation">.</span><span class="token function-variable function">_onCollectionChanged</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 最后导出</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> GeometryVisualizer<span class="token punctuation">;</span>
+</code></pre></div><h3 id="entity"><a href="#entity" class="header-anchor">#</a> Entity</h3> <p>Entity是cesium中的重要概念，它可以包含多个几何体，用于描述场景中的对象或者元素。</p> <p>primitives用于绘制基本的几何形状，例如点、线、面</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Entity构造函数</span>
+<span class="token keyword">function</span> <span class="token function">Entity</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  options <span class="token operator">=</span> <span class="token function">defaultValue</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> defaultValue<span class="token punctuation">.</span><span class="token constant">EMPTY_OBJECT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> id <span class="token operator">=</span> options<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">defined</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    id <span class="token operator">=</span> <span class="token function">createGuid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_availability <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_definitionChanged <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_name <span class="token operator">=</span> options<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_show <span class="token operator">=</span> <span class="token function">defaultValue</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>show<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_parent <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_propertyNames <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;billboard&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;box&quot;</span><span class="token punctuation">,</span>
+    <span class="token comment">//...</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_billboard <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_billboardSubscription <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_box <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_boxSubscription <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token comment">//...</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>_children <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>entityCollection <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>parent <span class="token operator">=</span> options<span class="token punctuation">.</span>parent<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 递归更新元素的显示</span>
+<span class="token keyword">function</span> <span class="token function">updateShow</span><span class="token punctuation">(</span><span class="token parameter">entity<span class="token punctuation">,</span> children<span class="token punctuation">,</span> isShowing</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> length <span class="token operator">=</span> children<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> child <span class="token operator">=</span> children<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> childShow <span class="token operator">=</span> child<span class="token punctuation">.</span>_show<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> oldValue <span class="token operator">=</span> <span class="token operator">!</span>isShowing <span class="token operator">&amp;&amp;</span> childShow<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> newValue <span class="token operator">=</span> isShowing <span class="token operator">&amp;&amp;</span> childShow<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>oldValue <span class="token operator">!==</span> newValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">updateShow</span><span class="token punctuation">(</span>child<span class="token punctuation">,</span> child<span class="token punctuation">.</span>_children<span class="token punctuation">,</span> isShowing<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  entity<span class="token punctuation">.</span>_definitionChanged<span class="token punctuation">.</span><span class="token function">raiseEvent</span><span class="token punctuation">(</span>
+    entity<span class="token punctuation">,</span>
+    <span class="token string">&quot;isShowing&quot;</span><span class="token punctuation">,</span>
+    isShowing<span class="token punctuation">,</span>
+    <span class="token operator">!</span>isShowing
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 定义若干属性</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperties</span><span class="token punctuation">(</span><span class="token class-name">Entity</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">availability</span><span class="token operator">:</span> <span class="token function">createRawPropertyDescriptor</span><span class="token punctuation">(</span><span class="token string">&quot;availability&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">definitionChanged</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_definitionChanged<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token function">createRawPropertyDescriptor</span><span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_show<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">//&gt;&gt;includeStart('debug', pragmas.debug);</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">defined</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">DeveloperError</span><span class="token punctuation">(</span><span class="token string">&quot;value is required.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">//&gt;&gt;includeEnd('debug');</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_show<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">const</span> wasShowing <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>isShowing<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_show <span class="token operator">=</span> value<span class="token punctuation">;</span>
+      <span class="token keyword">const</span> isShowing <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>isShowing<span class="token punctuation">;</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>wasShowing <span class="token operator">!==</span> isShowing<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">updateShow</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_children<span class="token punctuation">,</span> isShowing<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_definitionChanged<span class="token punctuation">.</span><span class="token function">raiseEvent</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&quot;show&quot;</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> <span class="token operator">!</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 各种几何图形</span>
+  <span class="token literal-property property">billboard</span><span class="token operator">:</span> <span class="token function">createPropertyTypeDescriptor</span><span class="token punctuation">(</span><span class="token string">&quot;billboard&quot;</span><span class="token punctuation">,</span> BillboardGraphics<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">box</span><span class="token operator">:</span> <span class="token function">createPropertyTypeDescriptor</span><span class="token punctuation">(</span><span class="token string">&quot;box&quot;</span><span class="token punctuation">,</span> BoxGraphics<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">corridor</span><span class="token operator">:</span> <span class="token function">createPropertyTypeDescriptor</span><span class="token punctuation">(</span><span class="token string">&quot;corridor&quot;</span><span class="token punctuation">,</span> CorridorGraphics<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 给定时间，判断是否可访问</span>
+<span class="token class-name">Entity</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">isAvailable</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 添加属性</span>
+<span class="token class-name">Entity</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">addProperty</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">propertyName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 移除属性</span>
+<span class="token class-name">Entity</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">removeProperty</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">propertyName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 融合默认属性</span>
+<span class="token class-name">Entity</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">merge</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">source</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 计算模型矩阵</span>
+<span class="token class-name">Entity</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">computeModelMatrix</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">time<span class="token punctuation">,</span> result</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+
+Entity<span class="token punctuation">.</span><span class="token function-variable function">supportsMaterialsforEntitiesOnTerrain</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">scene</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+Entity<span class="token punctuation">.</span><span class="token function-variable function">supportsPolylinesOnTerrain</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">scene</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><h3 id="矢量数据源-补充"><a href="#矢量数据源-补充" class="header-anchor">#</a> 矢量数据源（补充）</h3> <ul><li><p>KML数据加载与展示</p></li> <li><p>GeoJson数据源</p></li> <li><p>GPX数据源</p></li> <li><p>自定义数据源</p></li></ul> <h3 id="其他-2"><a href="#其他-2" class="header-anchor">#</a> 其他</h3> <ul><li>属性：位置、材质、速度等等</li></ul> <h2 id="shader"><a href="#shader" class="header-anchor">#</a> Shader</h2> <ul><li><strong>着色器程序管理（Shader Program Management）</strong>：<code>Shader</code> 模块提供了着色器程序的创建、编译和链接功能。它允许开发者定义和管理顶点着色器和片元着色器，并将它们组合成可用的着色器程序。</li> <li><strong>着色器程序输入（Shader Program Inputs）</strong>：<code>Shader</code> 模块定义了着色器程序的输入变量，如顶点坐标、法线、纹理坐标等。开发者可以通过定义这些输入变量来与渲染管道中的数据进行交互。</li> <li><strong>着色器程序输出（Shader Program Outputs）</strong>：<code>Shader</code> 模块定义了着色器程序的输出，如片元颜色、深度值等。开发者可以通过定义这些输出来指定着色器程序的渲染结果。</li> <li><strong>着色器程序内置变量（Shader Program Built-in Variables）</strong>：<code>Shader</code> 模块提供了一些内置变量，用于访问渲染管道中的一些常用信息。例如，内置变量可以访问相机信息、光照信息、材质属性等。</li> <li><strong>着色器程序宏定义（Shader Program Macros）</strong>：<code>Shader</code> 模块支持宏定义，允许开发者在着色器程序中定义和使用宏。宏定义可以用于条件编译、预处理指令等，以实现更灵活的着色器编程。</li> <li><strong>着色器程序内置函数（Shader Program Built-in Functions）</strong>：<code>Shader</code> 模块提供了一些内置函数，用于在着色器程序中执行常见的计算和操作。这些内置函数可以用于矩阵操作、向量运算、纹理采样等。</li> <li><strong>着色器程序扩展（Shader Program Extensions）</strong>：<code>Shader</code> 模块支持着色器程序的扩展功能。开发者可以使用扩展来添加额外的着色器特性和效果，以满足特定的渲染需求。</li> <li><strong>着色器程序预编译（Shader Program Precompilation）</strong>：<code>Shader</code> 模块支持着色器程序的预编译功能。这可以提前编译着色器程序，以加快渲染过程中的加载和初始化速度。</li></ul> <h2 id="documentation-文档"><a href="#documentation-文档" class="header-anchor">#</a> Documentation 文档</h2> <div class="language- extra-class"><pre class="language-text"><code>Documentation
+├── Contributors 
+│   ├── BuildGuide // 在本地构建和运行文档
+│   ├── CodingGuide // JS和GLSL编码规范，设计、可维护性和性能的最佳实践
+│   ├── DocumentationGuide // 如何写出好的参考文档
+│   ├── PerformanceTestingGuide // 测量运行时性能的最佳实践
+│   ├── TestingGuide // 如何编写和运行cesium测试
+│   └── VSCodeGuide // vscode 相关设置
+├── CustomShaderGuide // 自定义着色器指南
+├── FabricGuide // 材质指南
+├── OfflineGuide // 离线使用指南
+└── Schemas
+    └── Fabric
+</code></pre></div><h2 id="其他-3"><a href="#其他-3" class="header-anchor">#</a> 其他</h2> <h3 id="specs-测试"><a href="#specs-测试" class="header-anchor">#</a> Specs 测试</h3> <ul><li>Data  测试数据</li> <li>TestWorkers</li></ul> <h3 id="thirdparty-第三方库"><a href="#thirdparty-第三方库" class="header-anchor">#</a> ThirdParty  第三方库</h3> <h3 id="apps-应用示例"><a href="#apps-应用示例" class="header-anchor">#</a> Apps 应用示例</h3> <ul><li><p>Sandcastle</p></li> <li><p>TimelineDemo</p></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.3fc55435.js" defer></script><script src="/assets/js/2.60c6961f.js" defer></script><script src="/assets/js/33.3b6298d7.js" defer></script>
+  </body>
+</html>
