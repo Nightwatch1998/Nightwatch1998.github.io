@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NightWatch</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/images/favicon.png">
+    <meta name="description" content="编程，从入门到入土">
+    
+    <link rel="preload" href="/assets/css/0.styles.34aacdd0.css" as="style"><link rel="preload" href="/assets/js/app.73a34b00.js" as="script"><link rel="preload" href="/assets/js/2.994b757b.js" as="script"><link rel="preload" href="/assets/js/22.ac3fd5ff.js" as="script"><link rel="prefetch" href="/assets/js/10.17cbbd6c.js"><link rel="prefetch" href="/assets/js/11.d48f28bd.js"><link rel="prefetch" href="/assets/js/12.78ba2cfa.js"><link rel="prefetch" href="/assets/js/13.31dfaf6d.js"><link rel="prefetch" href="/assets/js/14.b67238cc.js"><link rel="prefetch" href="/assets/js/15.a63e938c.js"><link rel="prefetch" href="/assets/js/16.0f5095fa.js"><link rel="prefetch" href="/assets/js/17.81327b88.js"><link rel="prefetch" href="/assets/js/18.f44f2114.js"><link rel="prefetch" href="/assets/js/19.81b41ee4.js"><link rel="prefetch" href="/assets/js/20.de0c2006.js"><link rel="prefetch" href="/assets/js/21.03725859.js"><link rel="prefetch" href="/assets/js/23.33170dad.js"><link rel="prefetch" href="/assets/js/24.93f220cb.js"><link rel="prefetch" href="/assets/js/25.c38c0e67.js"><link rel="prefetch" href="/assets/js/26.73991e6d.js"><link rel="prefetch" href="/assets/js/27.d601446f.js"><link rel="prefetch" href="/assets/js/28.d96ceefd.js"><link rel="prefetch" href="/assets/js/29.f9ebeee4.js"><link rel="prefetch" href="/assets/js/3.1d6d3371.js"><link rel="prefetch" href="/assets/js/30.d46fe8a5.js"><link rel="prefetch" href="/assets/js/31.7b745acf.js"><link rel="prefetch" href="/assets/js/32.3ba18acc.js"><link rel="prefetch" href="/assets/js/33.fb27c1bd.js"><link rel="prefetch" href="/assets/js/34.110682d3.js"><link rel="prefetch" href="/assets/js/35.36de3bef.js"><link rel="prefetch" href="/assets/js/36.73112b59.js"><link rel="prefetch" href="/assets/js/37.e6c6a4d5.js"><link rel="prefetch" href="/assets/js/38.3206cdab.js"><link rel="prefetch" href="/assets/js/39.74058395.js"><link rel="prefetch" href="/assets/js/4.c69c5b0e.js"><link rel="prefetch" href="/assets/js/40.d0438e52.js"><link rel="prefetch" href="/assets/js/41.eb6bf223.js"><link rel="prefetch" href="/assets/js/42.270ca4af.js"><link rel="prefetch" href="/assets/js/43.d56a903e.js"><link rel="prefetch" href="/assets/js/44.f0f6d088.js"><link rel="prefetch" href="/assets/js/45.e7f15bcd.js"><link rel="prefetch" href="/assets/js/46.313156f6.js"><link rel="prefetch" href="/assets/js/47.85157209.js"><link rel="prefetch" href="/assets/js/48.b06262ee.js"><link rel="prefetch" href="/assets/js/49.442a8692.js"><link rel="prefetch" href="/assets/js/5.4dc8d661.js"><link rel="prefetch" href="/assets/js/50.0a9f596a.js"><link rel="prefetch" href="/assets/js/51.abc2fcd3.js"><link rel="prefetch" href="/assets/js/52.bef56859.js"><link rel="prefetch" href="/assets/js/53.4517c424.js"><link rel="prefetch" href="/assets/js/54.81bb0f52.js"><link rel="prefetch" href="/assets/js/55.263e4eef.js"><link rel="prefetch" href="/assets/js/56.4b9d4b12.js"><link rel="prefetch" href="/assets/js/57.d57e9c43.js"><link rel="prefetch" href="/assets/js/58.515b86c3.js"><link rel="prefetch" href="/assets/js/59.a5054dae.js"><link rel="prefetch" href="/assets/js/6.88d03338.js"><link rel="prefetch" href="/assets/js/60.2eef4541.js"><link rel="prefetch" href="/assets/js/61.9e926942.js"><link rel="prefetch" href="/assets/js/62.612c30eb.js"><link rel="prefetch" href="/assets/js/63.d46473be.js"><link rel="prefetch" href="/assets/js/64.8d982150.js"><link rel="prefetch" href="/assets/js/65.df0eb407.js"><link rel="prefetch" href="/assets/js/66.20140ab7.js"><link rel="prefetch" href="/assets/js/7.9de3ff65.js"><link rel="prefetch" href="/assets/js/8.4a3ccdb7.js"><link rel="prefetch" href="/assets/js/9.c746c217.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.34aacdd0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">NightWatch</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Basic
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/Basic/CSS基础.html" class="nav-link">
+  CSS基础
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/CSS预处理器.html" class="nav-link">
+  CSS预处理器
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/HTTP+Css知识.html" class="nav-link">
+  HTTP+Css知识
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/JavaScript高级编程.html" class="nav-link">
+  JavaScript高级编程
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/Typescript项目配置.html" class="nav-link">
+  Typescript项目配置
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/前端面试八股文.html" class="nav-link">
+  前端面试八股文
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/front-end/NodeJS环境配置.html" class="nav-link">
+  NodeJS环境配置
+</a></li><li class="dropdown-item"><h4>
+          React
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/React/React.html" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/Vue/Vue.js设计与实现.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/front-end/Vue/Vue面试.html" class="nav-link">
+  Vue面试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          前端工程化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/前端工程化/webpack配置.html" class="nav-link">
+  webpack配置
+</a></li><li class="dropdown-subitem"><a href="/front-end/前端工程化/web面试八股文.html" class="nav-link">
+  web面试八股文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          性能优化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/性能优化/性能优化.html" class="nav-link">
+  性能优化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据格式
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/数据格式/OBS.html" class="nav-link">
+  OBS
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/Video.js介绍.html" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/ffmpeg工具.html" class="nav-link">
+  ffmpeg工具
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/视频流介绍.html" class="nav-link">
+  视频流介绍
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/front-end/页面多分辨率适配.html" class="nav-link">
+  页面多分辨率适配
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/Navicat功能总结.html" class="nav-link">
+  Navicat功能总结
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/Nginx学习记录.html" class="nav-link">
+  Nginx学习记录
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/Redis安装方式汇总.html" class="nav-link">
+  Redis安装方式汇总
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/Tomcat安装方式汇总.html" class="nav-link">
+  Tomcat安装方式汇总
+</a></li><li class="dropdown-item"><h4>
+          mysql
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL安装方式汇总.html" class="nav-link">
+  MySQL安装方式汇总
+</a></li><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL数据备份.html" class="nav-link">
+  MySQL数据备份
+</a></li><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL设置远程访问.html" class="nav-link">
+  MySQL设置远程访问
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/back-end/nvm使用教程.html" class="nav-link">
+  nvm使用教程
+</a></li><li class="dropdown-item"><h4>
+          python
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/back-end/python/conda环境配置.html" class="nav-link">
+  conda环境配置
+</a></li><li class="dropdown-subitem"><a href="/back-end/python/python开发问题总结.html" class="nav-link">
+  python开发问题总结
+</a></li></ul></li><li class="dropdown-item"><h4>
+          springboot
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/back-end/springboot/SpringBoot分库分表.html" class="nav-link">
+  SpringBoot分库分表
+</a></li><li class="dropdown-subitem"><a href="/back-end/springboot/SpringBoot参数校验-文档.html" class="nav-link">
+  SpringBoot参数校验-文档
+</a></li><li class="dropdown-subitem"><a href="/back-end/springboot/SpringBoot数据库连接.html" class="nav-link">
+  SpringBoot数据库连接
+</a></li><li class="dropdown-subitem"><a href="/back-end/springboot/SpringBoot热更新.html" class="nav-link">
+  SpringBoot热更新
+</a></li><li class="dropdown-subitem"><a href="/back-end/springboot/SpringBoot集成文件.html" class="nav-link">
+  SpringBoot集成文件
+</a></li><li class="dropdown-subitem"><a href="/back-end/springboot/Springboot连接池.html" class="nav-link">
+  Springboot连接池
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/ArcGIS教程.html" class="nav-link">
+  ArcGIS教程
+</a></li><li class="dropdown-item"><!----> <a href="/gis/GDAL教程.html" class="nav-link">
+  GDAL教程
+</a></li><li class="dropdown-item"><h4>
+          GIS原理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/GIS原理/地理信息系统原理及应用.html" class="nav-link">
+  地理信息系统原理及应用
+</a></li></ul></li><li class="dropdown-item"><h4>
+          WebGIS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/WebGIS/CesiumLab学习.html" class="nav-link">
+  CesiumLab学习
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/Cesium中模型的空间变换.html" class="nav-link">
+  Cesium中模型的空间变换
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/Cesium源码学习.html" class="nav-link">
+  Cesium源码学习
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/GeoServer学习记录.html" class="nav-link">
+  GeoServer学习记录
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/SLD与SE样式.html" class="nav-link">
+  SLD与SE样式
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/在Vue中使用Cesium.html" class="nav-link">
+  在Vue中使用Cesium
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/gis/WebGL学习.html" class="nav-link">
+  WebGL学习
+</a></li><li class="dropdown-item"><h4>
+          地图学
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/地图学/地图投影.html" class="nav-link">
+  地图投影
+</a></li><li class="dropdown-subitem"><a href="/gis/地图学/地理坐标系统.html" class="nav-link">
+  地理坐标系统
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/gis/地图符号制作与使用.html" class="nav-link">
+  地图符号制作与使用
+</a></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/数据库/PostGIS教程.html" class="nav-link">
+  PostGIS教程
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Rong" class="dropdown-title"><span class="title">Rong</span> <span class="arrow down"></span></button> <button type="button" aria-label="Rong" class="mobile-dropdown-title"><span class="title">Rong</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/rong/测介电常数.html" class="nav-link">
+  测介电常数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/others/IDEA导入eclipse的Java web项目.html" class="nav-link">
+  IDEA导入eclipse的Java web项目
+</a></li><li class="dropdown-item"><!----> <a href="/others/Linux命令.html" class="nav-link">
+  Linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/others/MarkDown语法.html" class="nav-link">
+  MarkDown语法
+</a></li><li class="dropdown-item"><!----> <a href="/others/bat批处理脚本.html" class="nav-link">
+  bat批处理脚本
+</a></li><li class="dropdown-item"><!----> <a href="/others/hexo博客配置.html" class="nav-link">
+  hexo博客配置
+</a></li><li class="dropdown-item"><!----> <a href="/others/npm常用命令.html" class="nav-link">
+  npm常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/others/虚拟串口测试.html" class="nav-link">
+  虚拟串口测试
+</a></li></ul></div></div><div class="nav-item"><a href="/" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Basic
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/Basic/CSS基础.html" class="nav-link">
+  CSS基础
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/CSS预处理器.html" class="nav-link">
+  CSS预处理器
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/HTTP+Css知识.html" class="nav-link">
+  HTTP+Css知识
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/JavaScript高级编程.html" class="nav-link">
+  JavaScript高级编程
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/TypeScript.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/Typescript项目配置.html" class="nav-link">
+  Typescript项目配置
+</a></li><li class="dropdown-subitem"><a href="/front-end/Basic/前端面试八股文.html" class="nav-link">
+  前端面试八股文
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/front-end/NodeJS环境配置.html" class="nav-link">
+  NodeJS环境配置
+</a></li><li class="dropdown-item"><h4>
+          React
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/React/React.html" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/Vue/Vue.js设计与实现.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/front-end/Vue/Vue面试.html" class="nav-link">
+  Vue面试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          前端工程化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/前端工程化/webpack配置.html" class="nav-link">
+  webpack配置
+</a></li><li class="dropdown-subitem"><a href="/front-end/前端工程化/web面试八股文.html" class="nav-link">
+  web面试八股文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          性能优化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/性能优化/性能优化.html" class="nav-link">
+  性能优化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据格式
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/数据格式/OBS.html" class="nav-link">
+  OBS
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/Video.js介绍.html" class="nav-link">
+  Video
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/ffmpeg工具.html" class="nav-link">
+  ffmpeg工具
+</a></li><li class="dropdown-subitem"><a href="/front-end/数据格式/视频流介绍.html" class="nav-link">
+  视频流介绍
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/front-end/页面多分辨率适配.html" class="nav-link">
+  页面多分辨率适配
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/Navicat功能总结.html" class="nav-link">
+  Navicat功能总结
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/Nginx学习记录.html" class="nav-link">
+  Nginx学习记录
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/Redis安装方式汇总.html" class="nav-link">
+  Redis安装方式汇总
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/Tomcat安装方式汇总.html" class="nav-link">
+  Tomcat安装方式汇总
+</a></li><li class="dropdown-item"><h4>
+          mysql
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL安装方式汇总.html" class="nav-link">
+  MySQL安装方式汇总
+</a></li><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL数据备份.html" class="nav-link">
+  MySQL数据备份
+</a></li><li class="dropdown-subitem"><a href="/back-end/mysql/MySQL设置远程访问.html" class="nav-link">
+  MySQL设置远程访问
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/back-end/nvm使用教程.html" class="nav-link">
+  nvm使用教程
+</a></li><li class="dropdown-item"><h4>
+          python
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/back-end/python/conda环境配置.html" class="nav-link">
+  conda环境配置
+</a></li><li class="dropdown-subitem"><a href="/back-end/python/python开发问题总结.html" class="nav-link">
+  python开发问题总结
+</a></li></ul></li><li class="dropdown-item"><h4>
+          springboot
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/back-end/springboot/SpringBoot分库分表.html" class="nav-link">
+  SpringBoot分库分表
+</a></li><li class="dropdown-subitem"><a href="/back-end/springboot/SpringBoot参数校验-文档.html" class="nav-link">
+  SpringBoot参数校验-文档
+</a></li><li class="dropdown-subitem"><a href="/back-end/springboot/SpringBoot数据库连接.html" class="nav-link">
+  SpringBoot数据库连接
+</a></li><li class="dropdown-subitem"><a href="/back-end/springboot/SpringBoot热更新.html" class="nav-link">
+  SpringBoot热更新
+</a></li><li class="dropdown-subitem"><a href="/back-end/springboot/SpringBoot集成文件.html" class="nav-link">
+  SpringBoot集成文件
+</a></li><li class="dropdown-subitem"><a href="/back-end/springboot/Springboot连接池.html" class="nav-link">
+  Springboot连接池
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/ArcGIS教程.html" class="nav-link">
+  ArcGIS教程
+</a></li><li class="dropdown-item"><!----> <a href="/gis/GDAL教程.html" class="nav-link">
+  GDAL教程
+</a></li><li class="dropdown-item"><h4>
+          GIS原理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/GIS原理/地理信息系统原理及应用.html" class="nav-link">
+  地理信息系统原理及应用
+</a></li></ul></li><li class="dropdown-item"><h4>
+          WebGIS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/WebGIS/CesiumLab学习.html" class="nav-link">
+  CesiumLab学习
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/Cesium中模型的空间变换.html" class="nav-link">
+  Cesium中模型的空间变换
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/Cesium源码学习.html" class="nav-link">
+  Cesium源码学习
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/GeoServer学习记录.html" class="nav-link">
+  GeoServer学习记录
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/SLD与SE样式.html" class="nav-link">
+  SLD与SE样式
+</a></li><li class="dropdown-subitem"><a href="/gis/WebGIS/在Vue中使用Cesium.html" class="nav-link">
+  在Vue中使用Cesium
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/gis/WebGL学习.html" class="nav-link">
+  WebGL学习
+</a></li><li class="dropdown-item"><h4>
+          地图学
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/地图学/地图投影.html" class="nav-link">
+  地图投影
+</a></li><li class="dropdown-subitem"><a href="/gis/地图学/地理坐标系统.html" class="nav-link">
+  地理坐标系统
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/gis/地图符号制作与使用.html" class="nav-link">
+  地图符号制作与使用
+</a></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/gis/数据库/PostGIS教程.html" class="nav-link">
+  PostGIS教程
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Rong" class="dropdown-title"><span class="title">Rong</span> <span class="arrow down"></span></button> <button type="button" aria-label="Rong" class="mobile-dropdown-title"><span class="title">Rong</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/rong/测介电常数.html" class="nav-link">
+  测介电常数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/others/IDEA导入eclipse的Java web项目.html" class="nav-link">
+  IDEA导入eclipse的Java web项目
+</a></li><li class="dropdown-item"><!----> <a href="/others/Linux命令.html" class="nav-link">
+  Linux命令
+</a></li><li class="dropdown-item"><!----> <a href="/others/MarkDown语法.html" class="nav-link">
+  MarkDown语法
+</a></li><li class="dropdown-item"><!----> <a href="/others/bat批处理脚本.html" class="nav-link">
+  bat批处理脚本
+</a></li><li class="dropdown-item"><!----> <a href="/others/hexo博客配置.html" class="nav-link">
+  hexo博客配置
+</a></li><li class="dropdown-item"><!----> <a href="/others/npm常用命令.html" class="nav-link">
+  npm常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/others/虚拟串口测试.html" class="nav-link">
+  虚拟串口测试
+</a></li></ul></div></div><div class="nav-item"><a href="/" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span></span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/back-end/springboot/SpringBoot%E9%9B%86%E6%88%90%E6%96%87%E4%BB%B6.html#基础的文件上传与下载" class="sidebar-link">基础的文件上传与下载</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/back-end/springboot/SpringBoot%E9%9B%86%E6%88%90%E6%96%87%E4%BB%B6.html#引入依赖" class="sidebar-link">引入依赖</a></li><li class="sidebar-sub-header"><a href="/back-end/springboot/SpringBoot%E9%9B%86%E6%88%90%E6%96%87%E4%BB%B6.html#yml配置" class="sidebar-link">yml配置</a></li><li class="sidebar-sub-header"><a href="/back-end/springboot/SpringBoot%E9%9B%86%E6%88%90%E6%96%87%E4%BB%B6.html#使用" class="sidebar-link">使用</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>SpringBoot集成文件</p> <h2 id="基础的文件上传与下载"><a href="#基础的文件上传与下载" class="header-anchor">#</a> 基础的文件上传与下载</h2> <h3 id="引入依赖"><a href="#引入依赖" class="header-anchor">#</a> 引入依赖</h3> <div class="language-xml extra-class"><pre class="language-xml"><code>       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="yml配置"><a href="#yml配置" class="header-anchor">#</a> yml配置</h3> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">servlet</span><span class="token punctuation">:</span>
+    <span class="token key atrule">multipart</span><span class="token punctuation">:</span>
+      <span class="token key atrule">max-file-size</span><span class="token punctuation">:</span> 10MB <span class="token comment"># 单个文件大小</span>
+      <span class="token key atrule">max-request-size</span><span class="token punctuation">:</span> 500MB <span class="token comment"># 总文件大小</span>
+</code></pre></div><h3 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h3> <p>文件长传</p> <div class="language-java extra-class"><pre class="language-java"><code>    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/upload&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">ResponseResult</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> <span class="token function">upload</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">&quot;file&quot;</span><span class="token punctuation">,</span>required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token class-name">MultipartFile</span> file<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token class-name">String</span> uploadPath <span class="token operator">=</span> <span class="token string">&quot;d:/upload&quot;</span><span class="token punctuation">;</span>
+            <span class="token class-name">File</span> uploadDir <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>uploadPath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>uploadDir<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                uploadDir<span class="token punctuation">.</span><span class="token function">mkdir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span>uploadDir<span class="token punctuation">.</span><span class="token function">getAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// new一个本地文件</span>
+            <span class="token class-name">File</span> localFile <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>uploadPath <span class="token operator">+</span> <span class="token class-name">File</span><span class="token punctuation">.</span>separator <span class="token operator">+</span> file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 保存到本地</span>
+            file<span class="token punctuation">.</span><span class="token function">transferTo</span><span class="token punctuation">(</span>localFile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token class-name">ResponseResult</span><span class="token punctuation">.</span><span class="token function">fail</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token class-name">ResponseResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p>文件下载</p> <div class="language-java extra-class"><pre class="language-java"><code>    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/download&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">download</span><span class="token punctuation">(</span><span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        response<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 清除任何已设置的内容和头部信息</span>
+        response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">&quot;application/octet-stream&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 通用的二进制流</span>
+        <span class="token comment">// Content-disposition 指示如何处理接收到的响应内容</span>
+        <span class="token comment">// 接受的内容为一个附件,触发浏览器下载,指定文件名</span>
+        response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Content-disposition&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;attachment;filename=file_&quot;</span><span class="token operator">+</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot;.pdf&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">File</span> file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">&quot;d:download/毛泽东选集.pdf&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 建立输入流</span>
+        <span class="token keyword">try</span> <span class="token punctuation">(</span><span class="token class-name">FileInputStream</span> inputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 临时存储输入流中的数据</span>
+            <span class="token keyword">int</span> len<span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>len <span class="token operator">=</span> inputStream<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                response<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p>原文链接 https://www.pdai.tech/md/spring/springboot/springboot-x-file-upload-download.html</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/20/2024, 3:48:10 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.73a34b00.js" defer></script><script src="/assets/js/2.994b757b.js" defer></script><script src="/assets/js/22.ac3fd5ff.js" defer></script>
+  </body>
+</html>
