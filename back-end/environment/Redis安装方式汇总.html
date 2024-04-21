@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis安装方式汇总 | NightWatch</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/images/favicon.png">
+    <meta name="description" content="编程，从入门到入土">
+    
+    <link rel="preload" href="/assets/css/0.styles.34aacdd0.css" as="style"><link rel="preload" href="/assets/js/app.9beb7eff.js" as="script"><link rel="preload" href="/assets/js/2.994b757b.js" as="script"><link rel="preload" href="/assets/js/12.4d4995df.js" as="script"><link rel="prefetch" href="/assets/js/10.146e62f1.js"><link rel="prefetch" href="/assets/js/11.93b6f868.js"><link rel="prefetch" href="/assets/js/13.4f26f4b4.js"><link rel="prefetch" href="/assets/js/14.23f3550d.js"><link rel="prefetch" href="/assets/js/15.9c2ef1ad.js"><link rel="prefetch" href="/assets/js/16.0f45e91c.js"><link rel="prefetch" href="/assets/js/17.b85a828b.js"><link rel="prefetch" href="/assets/js/18.924e2b25.js"><link rel="prefetch" href="/assets/js/19.c51a5ece.js"><link rel="prefetch" href="/assets/js/20.c7d1d753.js"><link rel="prefetch" href="/assets/js/21.2a2ed18d.js"><link rel="prefetch" href="/assets/js/22.5861b252.js"><link rel="prefetch" href="/assets/js/23.f9557f09.js"><link rel="prefetch" href="/assets/js/24.c06cc693.js"><link rel="prefetch" href="/assets/js/25.ae46d725.js"><link rel="prefetch" href="/assets/js/26.2c66efa2.js"><link rel="prefetch" href="/assets/js/27.da18a7b5.js"><link rel="prefetch" href="/assets/js/28.b45eb188.js"><link rel="prefetch" href="/assets/js/29.92a7242b.js"><link rel="prefetch" href="/assets/js/3.761d2c22.js"><link rel="prefetch" href="/assets/js/30.dfd5cb7d.js"><link rel="prefetch" href="/assets/js/31.83ac5260.js"><link rel="prefetch" href="/assets/js/32.987874fb.js"><link rel="prefetch" href="/assets/js/33.bfbe55c9.js"><link rel="prefetch" href="/assets/js/34.c8b9a48c.js"><link rel="prefetch" href="/assets/js/35.aacfbdc3.js"><link rel="prefetch" href="/assets/js/36.5c7bd4b8.js"><link rel="prefetch" href="/assets/js/37.a32b014d.js"><link rel="prefetch" href="/assets/js/38.e8dc87b2.js"><link rel="prefetch" href="/assets/js/39.7f08ca37.js"><link rel="prefetch" href="/assets/js/4.c69c5b0e.js"><link rel="prefetch" href="/assets/js/40.ca274a04.js"><link rel="prefetch" href="/assets/js/41.402a010e.js"><link rel="prefetch" href="/assets/js/42.d2af8af3.js"><link rel="prefetch" href="/assets/js/43.c9fc0533.js"><link rel="prefetch" href="/assets/js/44.579b8e8c.js"><link rel="prefetch" href="/assets/js/45.81f84b2b.js"><link rel="prefetch" href="/assets/js/46.fce06818.js"><link rel="prefetch" href="/assets/js/47.de7994d5.js"><link rel="prefetch" href="/assets/js/48.fd35f6d0.js"><link rel="prefetch" href="/assets/js/49.d5b9de4f.js"><link rel="prefetch" href="/assets/js/5.4dc8d661.js"><link rel="prefetch" href="/assets/js/50.ca6e692c.js"><link rel="prefetch" href="/assets/js/51.e087cee3.js"><link rel="prefetch" href="/assets/js/52.8c88daba.js"><link rel="prefetch" href="/assets/js/53.b85db4ac.js"><link rel="prefetch" href="/assets/js/54.1d0de397.js"><link rel="prefetch" href="/assets/js/55.e14ab037.js"><link rel="prefetch" href="/assets/js/56.b78f227e.js"><link rel="prefetch" href="/assets/js/57.22c37f57.js"><link rel="prefetch" href="/assets/js/58.c9d558a2.js"><link rel="prefetch" href="/assets/js/59.ebef92d2.js"><link rel="prefetch" href="/assets/js/6.88d03338.js"><link rel="prefetch" href="/assets/js/60.f87651b3.js"><link rel="prefetch" href="/assets/js/61.ad0f0ad4.js"><link rel="prefetch" href="/assets/js/62.ede3d360.js"><link rel="prefetch" href="/assets/js/63.ce5b58c2.js"><link rel="prefetch" href="/assets/js/64.50c149f0.js"><link rel="prefetch" href="/assets/js/65.6f91d618.js"><link rel="prefetch" href="/assets/js/66.5fa07705.js"><link rel="prefetch" href="/assets/js/67.4b5dd85c.js"><link rel="prefetch" href="/assets/js/68.9d6ca34c.js"><link rel="prefetch" href="/assets/js/69.f9a6ea1d.js"><link rel="prefetch" href="/assets/js/7.9de3ff65.js"><link rel="prefetch" href="/assets/js/70.5826cf75.js"><link rel="prefetch" href="/assets/js/71.c219ad2d.js"><link rel="prefetch" href="/assets/js/72.4aee3c2e.js"><link rel="prefetch" href="/assets/js/73.b1519f6a.js"><link rel="prefetch" href="/assets/js/74.904f2971.js"><link rel="prefetch" href="/assets/js/75.f1d837cb.js"><link rel="prefetch" href="/assets/js/76.b23d5f7d.js"><link rel="prefetch" href="/assets/js/77.533ce902.js"><link rel="prefetch" href="/assets/js/78.30bbd2d9.js"><link rel="prefetch" href="/assets/js/79.ad065d02.js"><link rel="prefetch" href="/assets/js/8.8c1df6e1.js"><link rel="prefetch" href="/assets/js/80.605d75dc.js"><link rel="prefetch" href="/assets/js/81.e10644b7.js"><link rel="prefetch" href="/assets/js/82.d8643eed.js"><link rel="prefetch" href="/assets/js/83.a03c347b.js"><link rel="prefetch" href="/assets/js/84.5e22f4c0.js"><link rel="prefetch" href="/assets/js/85.26a78917.js"><link rel="prefetch" href="/assets/js/86.4803956a.js"><link rel="prefetch" href="/assets/js/87.ea8774c5.js"><link rel="prefetch" href="/assets/js/88.6ef12f04.js"><link rel="prefetch" href="/assets/js/89.56df680d.js"><link rel="prefetch" href="/assets/js/9.6db7ff72.js"><link rel="prefetch" href="/assets/js/90.99fc51f2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.34aacdd0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">NightWatch</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front-end/Basic/" class="nav-link">
+  前端基础
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/前端工程化/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/性能优化/" class="nav-link">
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/数据格式/" class="nav-link">
+  数据格式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/environment/" class="nav-link router-link-active">
+  环境配置
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/mysql/" class="nav-link">
+  MySQL数据库
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/springboot/" class="nav-link">
+  SpringBoot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/GIS原理/" class="nav-link">
+  GIS原理
+</a></li><li class="dropdown-item"><!----> <a href="/gis/WebGIS/" class="nav-link">
+  WebGIS开发
+</a></li><li class="dropdown-item"><!----> <a href="/gis/地图学/" class="nav-link">
+  地图学
+</a></li><li class="dropdown-item"><!----> <a href="/gis/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/gis/tools/" class="nav-link">
+  GIS工具
+</a></li></ul></div></div><div class="nav-item"><a href="/rong/" class="nav-link">
+  Rong
+</a></div><div class="nav-item"><a href="/others/" class="nav-link">
+  其他
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front-end/Basic/" class="nav-link">
+  前端基础
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/前端工程化/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/性能优化/" class="nav-link">
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/数据格式/" class="nav-link">
+  数据格式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/environment/" class="nav-link router-link-active">
+  环境配置
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/mysql/" class="nav-link">
+  MySQL数据库
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/springboot/" class="nav-link">
+  SpringBoot
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/GIS原理/" class="nav-link">
+  GIS原理
+</a></li><li class="dropdown-item"><!----> <a href="/gis/WebGIS/" class="nav-link">
+  WebGIS开发
+</a></li><li class="dropdown-item"><!----> <a href="/gis/地图学/" class="nav-link">
+  地图学
+</a></li><li class="dropdown-item"><!----> <a href="/gis/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/gis/tools/" class="nav-link">
+  GIS工具
+</a></li></ul></div></div><div class="nav-item"><a href="/rong/" class="nav-link">
+  Rong
+</a></div><div class="nav-item"><a href="/others/" class="nav-link">
+  其他
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Environment</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/back-end/environment/" aria-current="page" class="sidebar-link">♥环境配置♥</a></li><li><a href="/back-end/environment/Java环境变量配置.html" class="sidebar-link">Java环境变量配置</a></li><li><a href="/back-end/environment/Navicat功能总结.html" class="sidebar-link">Navicat功能总结</a></li><li><a href="/back-end/environment/Nginx学习记录.html" class="sidebar-link">Nginx学习记录</a></li><li><a href="/back-end/environment/Redis安装方式汇总.html" class="active sidebar-link">Redis安装方式汇总</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/back-end/environment/Redis安装方式汇总.html#windows环境" class="sidebar-link">Windows环境</a></li><li class="sidebar-sub-header"><a href="/back-end/environment/Redis安装方式汇总.html#linux系统" class="sidebar-link">Linux系统</a></li><li class="sidebar-sub-header"><a href="/back-end/environment/Redis安装方式汇总.html#可视化工具" class="sidebar-link">可视化工具</a></li></ul></li><li><a href="/back-end/environment/Tomcat安装方式汇总.html" class="sidebar-link">Tomcat8.0  zip安装方式</a></li><li><a href="/back-end/environment/nvm使用教程.html" class="sidebar-link">安装</a></li><li><a href="/back-end/environment/项目部署.html" class="sidebar-link">项目部署</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="redis安装方式汇总"><a href="#redis安装方式汇总" class="header-anchor">#</a> Redis安装方式汇总</h1> <h2 id="windows环境"><a href="#windows环境" class="header-anchor">#</a> Windows环境</h2> <h3 id="安装包下载"><a href="#安装包下载" class="header-anchor">#</a> 安装包下载</h3> <p>windows版本redis下载（GitHub）：</p> <p>https://github.com/tporadowski/redis/releases （推荐）</p> <p>https://github.com/MicrosoftArchive/redis/releases</p> <p>官网下载（无Windows版本）： https://redis.io/download</p> <p>所有版本这里都有：https://download.redis.io/releases/（下载后是个Linux的压缩文件，需要下载、解压和编译）</p> <h3 id="windows系统zip方式"><a href="#windows系统zip方式" class="header-anchor">#</a> Windows系统zip方式</h3> <h4 id="安装并启动"><a href="#安装并启动" class="header-anchor">#</a> 安装并启动</h4> <p>解压压缩包，cmd进入解压目录，运行命令</p> <div class="language- extra-class"><pre class="language-text"><code>redis-server.exe redis.windows.conf
+</code></pre></div><p>出现redis图案即为启动成功</p> <p>为了方便使用，可以把redis路径配置到path中</p> <h4 id="测试"><a href="#测试" class="header-anchor">#</a> 测试</h4> <p>使用安装目录的redis-cli.exe工具</p> <div class="language- extra-class"><pre class="language-text"><code>redis-cli.exe -h 127.0.0.1 -p 6379
+127.0.0.1:6379&gt; ping
+PONG
+</code></pre></div><p>切换数据库</p> <div class="language- extra-class"><pre class="language-text"><code>127.0.0.1:6379&gt; select 8
+OK
+127.0.0.1:6379[8]&gt; set name dish
+OK
+127.0.0.1:6379[8]&gt; get name
+&quot;dish&quot;
+127.0.0.1:6379[8]&gt; shutdown
+not connected&gt;
+</code></pre></div><h3 id="windows系统msi方式"><a href="#windows系统msi方式" class="header-anchor">#</a> Windows系统msi方式</h3> <h4 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h4> <p>下载msi安装包后双击，设置安装位置和端口</p> <p>在安装目录配置<strong>redis.windows-service.conf</strong>文件，找到<strong>requirepass foobared</strong>，在后面添加一行</p> <div class="language- extra-class"><pre class="language-text"><code>requirepass 123456
+</code></pre></div><p>配置连接密码</p> <p>启动服务</p> <p>在windows服务中查找redis，右键启动</p> <div class="language- extra-class"><pre class="language-text"><code>E:\Program Files x86\redis&gt;redis-cli
+127.0.0.1:6379&gt;
+</code></pre></div><p>密码验证</p> <div class="language- extra-class"><pre class="language-text"><code>127.0.0.1:6379&gt; auth 123456
+OK
+</code></pre></div><p>验证get set</p> <div class="language- extra-class"><pre class="language-text"><code>127.0.0.1:6379&gt; set name dish
+OK
+127.0.0.1:6379&gt; get name
+&quot;dish&quot;
+</code></pre></div><h3 id="常用指令"><a href="#常用指令" class="header-anchor">#</a> 常用指令</h3> <div class="language- extra-class"><pre class="language-text"><code>安装为系统服务：
+redis-server --service-install
+卸载服务：
+redis-server --service-uninstall
+开启服务：
+redis-server --service-start
+停止服务：
+redis-server --service-stop
+</code></pre></div><h2 id="linux系统"><a href="#linux系统" class="header-anchor">#</a> Linux系统</h2> <h3 id="安装包下载-2"><a href="#安装包下载-2" class="header-anchor">#</a> 安装包下载</h3> <p>这里准备了redis-5.0.8.tar.gz，直接放到root目录</p> <h3 id="debain系统"><a href="#debain系统" class="header-anchor">#</a> debain系统</h3> <h4 id="安装-2"><a href="#安装-2" class="header-anchor">#</a> 安装</h4> <div class="language- extra-class"><pre class="language-text"><code>1. 在/usr/local/下创建redis文件夹并进入
+cd /usr/local/
+mkdir redis
+cd redis
+
+2. 将redis安装包解压到/usr/local/redis
+tar -zxvf /root/redis-5.0.8.tar.gz -C ./
+解压后/usr/local/redis 出现redis-5.0.8目录
+
+3. 进入目录编译
+cd redis-5.0.8/
+make install
+
+4. 将redis安装未系统服务并后台启动
+cd utils/
+./install_server.sh
+选择全部默认配置
+
+5. 查看redis启动结果
+systemctl status redis_6379
+
+6. 启动redis-li测试
+redis-cli
+
+</code></pre></div><h4 id="更改配置"><a href="#更改配置" class="header-anchor">#</a> 更改配置</h4> <p>远程访问</p> <div class="language- extra-class"><pre class="language-text"><code>vim /etc/redis/6379.conf
+bind 127.0.0.2
+改为
+bind 0.0.0.0
+重启服务
+systemctl restart redis_6379
+</code></pre></div><p>设置访问密码</p> <div class="language- extra-class"><pre class="language-text"><code>vim /etc/redis/6379.conf
+找到如下内容
+# requirepass foorbared
+去掉注释，更换为自己的密码
+requirepass huyadish
+保存，重启服务
+systemctl restart redis_6379
+</code></pre></div><h2 id="可视化工具"><a href="#可视化工具" class="header-anchor">#</a> 可视化工具</h2> <h3 id="redis-desktop-manager"><a href="#redis-desktop-manager" class="header-anchor">#</a> Redis Desktop Manager</h3> <p>需要安装使用，0.9.4以上是要收费的</p> <p>下载地址：https://github.com/uglide/RedisDesktopManager/releases/download/0.9.3/redis-desktop-manager-0.9.3.817.exe</p> <p>详情：https://blog.csdn.net/u012688704/article/details/82251338</p> <p>下载完成之后直接点击安装，无需任何配置直接连接。</p> <h3 id="redisstudio-补充"><a href="#redisstudio-补充" class="header-anchor">#</a> RedisStudio（补充）</h3> <p>下载地址：https://github.com/cinience/RedisStudio/releases</p> <h3 id="treenms-补充"><a href="#treenms-补充" class="header-anchor">#</a> treeNMS（补充）</h3> <p>基于web方式的管理</p> <p>官网下载地址：http://www.treesoft.cn/dms.html</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/21/2024, 6:37:02 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/back-end/environment/Nginx学习记录.html" class="prev">
+        Nginx学习记录
+      </a></span> <span class="next"><a href="/back-end/environment/Tomcat安装方式汇总.html">
+        Tomcat8.0  zip安装方式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.9beb7eff.js" defer></script><script src="/assets/js/2.994b757b.js" defer></script><script src="/assets/js/12.4d4995df.js" defer></script>
+  </body>
+</html>
