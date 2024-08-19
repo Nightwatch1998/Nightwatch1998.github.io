@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>DockerFile | NightWatch</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/favicon.png">
+    <meta name="description" content="编程，从入门到入土">
+    
+    <link rel="preload" href="/assets/css/0.styles.4c261fea.css" as="style"><link rel="preload" href="/assets/js/app.9d17c74a.js" as="script"><link rel="preload" href="/assets/js/2.4829a41e.js" as="script"><link rel="preload" href="/assets/js/1.21e39df5.js" as="script"><link rel="preload" href="/assets/js/23.768a6a1f.js" as="script"><link rel="prefetch" href="/assets/js/10.36ab4607.js"><link rel="prefetch" href="/assets/js/100.836e046e.js"><link rel="prefetch" href="/assets/js/101.abe0a224.js"><link rel="prefetch" href="/assets/js/102.0e2aa57f.js"><link rel="prefetch" href="/assets/js/103.a5dff33a.js"><link rel="prefetch" href="/assets/js/104.4ba0107e.js"><link rel="prefetch" href="/assets/js/105.122e282e.js"><link rel="prefetch" href="/assets/js/106.499b8c22.js"><link rel="prefetch" href="/assets/js/107.e1907f44.js"><link rel="prefetch" href="/assets/js/108.c06a0e3c.js"><link rel="prefetch" href="/assets/js/109.c96c9454.js"><link rel="prefetch" href="/assets/js/11.9d26e9af.js"><link rel="prefetch" href="/assets/js/110.a791cb68.js"><link rel="prefetch" href="/assets/js/111.2785769a.js"><link rel="prefetch" href="/assets/js/112.3b12c500.js"><link rel="prefetch" href="/assets/js/113.67f10e98.js"><link rel="prefetch" href="/assets/js/114.07cbd8fd.js"><link rel="prefetch" href="/assets/js/115.170a89c7.js"><link rel="prefetch" href="/assets/js/116.ddd72372.js"><link rel="prefetch" href="/assets/js/117.f1921460.js"><link rel="prefetch" href="/assets/js/118.fafa6861.js"><link rel="prefetch" href="/assets/js/119.79d96cc5.js"><link rel="prefetch" href="/assets/js/12.0b61f8e9.js"><link rel="prefetch" href="/assets/js/120.09298453.js"><link rel="prefetch" href="/assets/js/121.7475f715.js"><link rel="prefetch" href="/assets/js/122.f39b1ebd.js"><link rel="prefetch" href="/assets/js/123.2e2eb5c3.js"><link rel="prefetch" href="/assets/js/124.f7466181.js"><link rel="prefetch" href="/assets/js/125.f628afe2.js"><link rel="prefetch" href="/assets/js/126.d38c4d71.js"><link rel="prefetch" href="/assets/js/127.4aab34ad.js"><link rel="prefetch" href="/assets/js/128.d1e506da.js"><link rel="prefetch" href="/assets/js/129.df7a721a.js"><link rel="prefetch" href="/assets/js/13.152b21ae.js"><link rel="prefetch" href="/assets/js/130.2cea1427.js"><link rel="prefetch" href="/assets/js/131.19d15a14.js"><link rel="prefetch" href="/assets/js/132.2e2c1630.js"><link rel="prefetch" href="/assets/js/133.4bf04481.js"><link rel="prefetch" href="/assets/js/134.1749ea07.js"><link rel="prefetch" href="/assets/js/135.f82cd4ea.js"><link rel="prefetch" href="/assets/js/14.601864c0.js"><link rel="prefetch" href="/assets/js/15.1ca2d588.js"><link rel="prefetch" href="/assets/js/16.f4f9fc10.js"><link rel="prefetch" href="/assets/js/17.c0c7e874.js"><link rel="prefetch" href="/assets/js/18.1dcc6d96.js"><link rel="prefetch" href="/assets/js/19.eb1d2ccc.js"><link rel="prefetch" href="/assets/js/20.e0b38ec4.js"><link rel="prefetch" href="/assets/js/21.78e23c64.js"><link rel="prefetch" href="/assets/js/22.2aa7a141.js"><link rel="prefetch" href="/assets/js/24.0840f4e5.js"><link rel="prefetch" href="/assets/js/25.58e5e2bb.js"><link rel="prefetch" href="/assets/js/26.662e19b6.js"><link rel="prefetch" href="/assets/js/27.272efacf.js"><link rel="prefetch" href="/assets/js/28.1d459995.js"><link rel="prefetch" href="/assets/js/29.3bd50ce2.js"><link rel="prefetch" href="/assets/js/3.ce969d4f.js"><link rel="prefetch" href="/assets/js/30.879dbc32.js"><link rel="prefetch" href="/assets/js/31.5e87169c.js"><link rel="prefetch" href="/assets/js/32.48a0eaa3.js"><link rel="prefetch" href="/assets/js/33.5700fe94.js"><link rel="prefetch" href="/assets/js/34.fddcc2db.js"><link rel="prefetch" href="/assets/js/35.843987d2.js"><link rel="prefetch" href="/assets/js/36.fbc3a6fb.js"><link rel="prefetch" href="/assets/js/37.c8c4e0a9.js"><link rel="prefetch" href="/assets/js/38.099ecc4e.js"><link rel="prefetch" href="/assets/js/39.d7e756a7.js"><link rel="prefetch" href="/assets/js/4.b8125ad6.js"><link rel="prefetch" href="/assets/js/40.90ba9a43.js"><link rel="prefetch" href="/assets/js/41.2f047731.js"><link rel="prefetch" href="/assets/js/42.9a98d477.js"><link rel="prefetch" href="/assets/js/43.c66cfc28.js"><link rel="prefetch" href="/assets/js/44.c74a0cf5.js"><link rel="prefetch" href="/assets/js/45.5e21c40d.js"><link rel="prefetch" href="/assets/js/46.d0a61f1d.js"><link rel="prefetch" href="/assets/js/47.c18534f7.js"><link rel="prefetch" href="/assets/js/48.c705de7a.js"><link rel="prefetch" href="/assets/js/49.de23cc25.js"><link rel="prefetch" href="/assets/js/5.2d50631a.js"><link rel="prefetch" href="/assets/js/50.09de16e7.js"><link rel="prefetch" href="/assets/js/51.c94d29cd.js"><link rel="prefetch" href="/assets/js/52.257dc25d.js"><link rel="prefetch" href="/assets/js/53.ddc2d70e.js"><link rel="prefetch" href="/assets/js/54.60d0204c.js"><link rel="prefetch" href="/assets/js/55.4e777bcb.js"><link rel="prefetch" href="/assets/js/56.a8fa7d76.js"><link rel="prefetch" href="/assets/js/57.d95a1bd0.js"><link rel="prefetch" href="/assets/js/58.4d001321.js"><link rel="prefetch" href="/assets/js/59.216bc791.js"><link rel="prefetch" href="/assets/js/6.674e2ad9.js"><link rel="prefetch" href="/assets/js/60.4fc79c10.js"><link rel="prefetch" href="/assets/js/61.1567a449.js"><link rel="prefetch" href="/assets/js/62.cb46261b.js"><link rel="prefetch" href="/assets/js/63.d17cc7b3.js"><link rel="prefetch" href="/assets/js/64.aa361ff7.js"><link rel="prefetch" href="/assets/js/65.9d037f09.js"><link rel="prefetch" href="/assets/js/66.43189c0c.js"><link rel="prefetch" href="/assets/js/67.c81da328.js"><link rel="prefetch" href="/assets/js/68.e1db6079.js"><link rel="prefetch" href="/assets/js/69.4519e509.js"><link rel="prefetch" href="/assets/js/7.f1dd9a86.js"><link rel="prefetch" href="/assets/js/70.902cd7a2.js"><link rel="prefetch" href="/assets/js/71.e8d65816.js"><link rel="prefetch" href="/assets/js/72.9d3996fd.js"><link rel="prefetch" href="/assets/js/73.97375400.js"><link rel="prefetch" href="/assets/js/74.e12dcb81.js"><link rel="prefetch" href="/assets/js/75.c1616993.js"><link rel="prefetch" href="/assets/js/76.e0b9d014.js"><link rel="prefetch" href="/assets/js/77.568c9cbb.js"><link rel="prefetch" href="/assets/js/78.088e2fea.js"><link rel="prefetch" href="/assets/js/79.9b89ce96.js"><link rel="prefetch" href="/assets/js/80.626afb35.js"><link rel="prefetch" href="/assets/js/81.4c4eb56c.js"><link rel="prefetch" href="/assets/js/82.502a1cea.js"><link rel="prefetch" href="/assets/js/83.54c8b78f.js"><link rel="prefetch" href="/assets/js/84.4a1f6577.js"><link rel="prefetch" href="/assets/js/85.49dd1619.js"><link rel="prefetch" href="/assets/js/86.7ec409f1.js"><link rel="prefetch" href="/assets/js/87.c813e180.js"><link rel="prefetch" href="/assets/js/88.c446949d.js"><link rel="prefetch" href="/assets/js/89.fb08d88d.js"><link rel="prefetch" href="/assets/js/90.08dab042.js"><link rel="prefetch" href="/assets/js/91.720d996d.js"><link rel="prefetch" href="/assets/js/92.70613cfd.js"><link rel="prefetch" href="/assets/js/93.78877aa1.js"><link rel="prefetch" href="/assets/js/94.972841fd.js"><link rel="prefetch" href="/assets/js/95.8bd47878.js"><link rel="prefetch" href="/assets/js/96.df06c991.js"><link rel="prefetch" href="/assets/js/97.01219522.js"><link rel="prefetch" href="/assets/js/98.6cf66f17.js"><link rel="prefetch" href="/assets/js/99.ce57e548.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.271bc088.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4c261fea.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">NightWatch</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front-end/Basic/" class="nav-link">
+  前端基础
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/前端工程化/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/性能优化/" class="nav-link">
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/数据格式/" class="nav-link">
+  数据格式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/environment/" class="nav-link">
+  环境配置
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/mysql/" class="nav-link">
+  MySQL数据库
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/springboot/" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/docker/" class="nav-link router-link-active">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/computer/linux/" class="nav-link">
+  Linux操作系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/GIS原理/" class="nav-link">
+  GIS原理
+</a></li><li class="dropdown-item"><!----> <a href="/gis/WebGIS/" class="nav-link">
+  WebGIS开发
+</a></li><li class="dropdown-item"><!----> <a href="/gis/地图学/" class="nav-link">
+  地图学
+</a></li><li class="dropdown-item"><!----> <a href="/gis/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/gis/tools/" class="nav-link">
+  GIS工具
+</a></li></ul></div></div><div class="nav-item"><a href="/rong/" class="nav-link">
+  Rong
+</a></div><div class="nav-item"><a href="/others/" class="nav-link">
+  其他
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front-end/Basic/" class="nav-link">
+  前端基础
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/前端工程化/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/性能优化/" class="nav-link">
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/数据格式/" class="nav-link">
+  数据格式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/environment/" class="nav-link">
+  环境配置
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/mysql/" class="nav-link">
+  MySQL数据库
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/springboot/" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/docker/" class="nav-link router-link-active">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/computer/linux/" class="nav-link">
+  Linux操作系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/GIS原理/" class="nav-link">
+  GIS原理
+</a></li><li class="dropdown-item"><!----> <a href="/gis/WebGIS/" class="nav-link">
+  WebGIS开发
+</a></li><li class="dropdown-item"><!----> <a href="/gis/地图学/" class="nav-link">
+  地图学
+</a></li><li class="dropdown-item"><!----> <a href="/gis/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/gis/tools/" class="nav-link">
+  GIS工具
+</a></li></ul></div></div><div class="nav-item"><a href="/rong/" class="nav-link">
+  Rong
+</a></div><div class="nav-item"><a href="/others/" class="nav-link">
+  其他
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Docker</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/back-end/docker/" aria-current="page" class="sidebar-link">♥Docker♥</a></li><li><a href="/back-end/docker/DockerFile.html" aria-current="page" class="active sidebar-link">DockerFile</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/back-end/docker/DockerFile.html#dockerfile介绍" class="sidebar-link">DockerFile介绍</a></li><li class="sidebar-sub-header"><a href="/back-end/docker/DockerFile.html#dockerfile构建过程" class="sidebar-link">DockerFile构建过程</a></li><li class="sidebar-sub-header"><a href="/back-end/docker/DockerFile.html#dockerfile的指令" class="sidebar-link">DockerFile的指令</a></li><li class="sidebar-sub-header"><a href="/back-end/docker/DockerFile.html#创建自定义dockerfile" class="sidebar-link">创建自定义DockerFile</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/back-end/docker/DockerFile.html#实战-添加vim命令" class="sidebar-link">实战：添加vim命令</a></li><li class="sidebar-sub-header"><a href="/back-end/docker/DockerFile.html#实战-cmd-和-entrypoint的区别" class="sidebar-link">实战：CMD 和 ENTRYPOINT的区别</a></li><li class="sidebar-sub-header"><a href="/back-end/docker/DockerFile.html#实战-tomcat镜像" class="sidebar-link">实战：Tomcat镜像</a></li></ul></li></ul></li><li><a href="/back-end/docker/Docker常用命令.html" class="sidebar-link">Docker常用命令</a></li><li><a href="/back-end/docker/Docker的容器、镜像与数据卷.html" class="sidebar-link">Docker的容器、镜像与数据卷</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="dockerfile"><a href="#dockerfile" class="header-anchor">#</a> DockerFile</h1> <h2 id="dockerfile介绍"><a href="#dockerfile介绍" class="header-anchor">#</a> DockerFile介绍</h2> <p>dockerfile是用来构建docker镜像的文件！</p> <p>构建步骤：</p> <p>1、编写一个dockerfile文件</p> <p>2、docker build构建成为一个镜像</p> <p>3、docker run 运行镜像</p> <p>4、docker push 发布镜像（Docker Hub、阿里云镜像仓库）</p> <h2 id="dockerfile构建过程"><a href="#dockerfile构建过程" class="header-anchor">#</a> DockerFile构建过程</h2> <p>基础知识：</p> <p>1、每个保留关键字都必须是大写字母</p> <p>2、执行从上到下顺序执行</p> <p>3、#表示注释</p> <p>4、每个指令都会创建提交一个新的镜像层，并提交</p> <h2 id="dockerfile的指令"><a href="#dockerfile的指令" class="header-anchor">#</a> DockerFile的指令</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>FROM         <span class="token comment"># 指定基础镜像，比如node:8</span>
+MAINTAINER   <span class="token comment"># 镜像作者，姓名+邮箱</span>
+RUN			 <span class="token comment"># 构建镜像时运行的shell命令</span>
+ADD          <span class="token comment"># 添加文件到镜像中，和COPY的区别是可以自动解压</span>
+WORKDIR      <span class="token comment"># 设置工作目录</span>
+VOLUME       <span class="token comment"># 指定挂载点到宿主机目录</span>
+EXPOSE       <span class="token comment"># 生命容器使用的网络端口</span>
+CMD          <span class="token comment"># 启动容器时运行的shell命令，只有最后一个会生效,运行容器的指定命令会替代CMD</span>
+ENTRYPOINT   <span class="token comment"># 启动容器时运行的shell命令，运行容器时指定的命令会追加</span>
+ONBUILD      <span class="token comment"># 当构建一个被继承DockerFile 时运行</span>
+COPY         <span class="token comment"># 类似ADD，将文件拷贝到镜像环境</span>
+ENV          <span class="token comment"># 构建的时候设置环境变量</span>
+</code></pre></div><h2 id="创建自定义dockerfile"><a href="#创建自定义dockerfile" class="header-anchor">#</a> 创建自定义DockerFile</h2> <h3 id="实战-添加vim命令"><a href="#实战-添加vim命令" class="header-anchor">#</a> 实战：添加vim命令</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 1 编写Dockerfile文件</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># cat mydockerfile</span>
+FROM centos
+MAINTAINER huyadish<span class="token operator">&lt;</span>gh123456@163.com<span class="token operator">&gt;</span>
+
+ENV MYPATH /usr/local
+WORKDIR <span class="token variable">$MYPATH</span>
+
+RUN yum <span class="token parameter variable">-y</span> <span class="token function">install</span> <span class="token function">vim</span>
+RUN yum <span class="token parameter variable">-y</span> <span class="token function">install</span> net-tools
+
+EXPOSE <span class="token number">80</span>
+
+CMD <span class="token builtin class-name">echo</span> <span class="token variable">$MYPATH</span>
+CMD <span class="token builtin class-name">echo</span> <span class="token string">&quot;---end---&quot;</span>
+CMD /bin/bash
+
+<span class="token comment"># 2 通过这个文件构建镜像</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker build -f mydockerfile -t mycentos:1.0 .</span>
+
+<span class="token comment"># 3 测试运行</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker run -it mycentos:1.0 /bin/bash</span>
+
+<span class="token comment"># 4 查看镜像是如何生成的</span>
+<span class="token function">docker</span> <span class="token function">history</span> 镜像名
+</code></pre></div><p>遇到的坑：yum 安装失败，无法解析mirrorlist.centos.org</p> <div class="language- extra-class"><pre class="language-text"><code>
+ =&gt; ERROR [3/4] RUN yum -y install vim                                                                    0.8s
+------
+ &gt; [3/4] RUN yum -y install vim:
+0.716 CentOS Linux 8 - AppStream                      0.0  B/s |   0  B     00:00
+0.717 Errors during downloading metadata for repository 'appstream':
+0.717   - Curl error (6): Couldn't resolve host name for http://mirrorlist.centos.org/?release=8&amp;arch=x86_64&amp;repo=AppStream&amp;infra=container [Could not resolve host: mirrorlist.centos.org]
+
+</code></pre></div><blockquote><p>注意：centos7已经在2024年6月30日停止维护，相关的镜像网站也停了</p></blockquote> <p>在dockerfile中添加换源信息</p> <div class="language-shell extra-class"><pre class="language-shell"><code>FROM centos
+MAINTAINER huyadish<span class="token operator">&lt;</span>gh123456@163.com<span class="token operator">&gt;</span>
+
+ENV MYPATH /usr/local
+WORKDIR <span class="token variable">$MYPATH</span>
+
+<span class="token comment"># 换为阿里云的镜像源</span>
+RUN <span class="token builtin class-name">cd</span> /etc/yum.repos.d/
+RUN <span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/mirrorlist/#mirrorlist/g'</span> /etc/yum.repos.d/CentOS-*
+RUN <span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s|#baseurl=http://mirror.centos.org|baseurl=http://mirrors.aliyun.com|g'</span> /etc/yum.repos.d/CentOS-*
+
+<span class="token comment"># 安装 vim  net-tools</span>
+RUN yum <span class="token parameter variable">-y</span> <span class="token function">install</span> <span class="token function">vim</span>
+RUN yum <span class="token parameter variable">-y</span> <span class="token function">install</span> net-tools
+
+EXPOSE <span class="token number">80</span>
+
+CMD <span class="token builtin class-name">echo</span> <span class="token variable">$MYPATH</span>
+CMD <span class="token builtin class-name">echo</span> <span class="token string">&quot;---end---&quot;</span>
+CMD /bin/bash
+</code></pre></div><p>构建运行</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 构建</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker build -f Dockerfile1 -t test .</span>
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> Building <span class="token number">16</span>.0s <span class="token punctuation">(</span><span class="token number">11</span>/11<span class="token punctuation">)</span> FINISHED 
+
+<span class="token comment"># 运行并进入</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker run -it test /bin/bash</span>
+<span class="token punctuation">[</span>root@d85874588b4a local<span class="token punctuation">]</span><span class="token comment">#</span>
+
+<span class="token comment"># 测试</span>
+<span class="token punctuation">[</span>root@d85874588b4a local<span class="token punctuation">]</span><span class="token comment"># vim --help</span>
+VIM - Vi IMproved <span class="token number">8.0</span> <span class="token punctuation">(</span><span class="token number">2016</span> Sep <span class="token number">12</span>, compiled Sep <span class="token number">22</span> <span class="token number">2021</span> <span class="token number">11</span>:10:49<span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span>root@d85874588b4a local<span class="token punctuation">]</span><span class="token comment"># ifconfig</span>
+eth0: <span class="token assign-left variable">flags</span><span class="token operator">=</span><span class="token number">416</span><span class="token operator"><span class="token file-descriptor important">3</span>&lt;</span>UP,BROADCAST,RUNNING,MULTICAST<span class="token operator">&gt;</span>  mtu <span class="token number">1500</span>
+        inet <span class="token number">172.17</span>.0.2  netmask <span class="token number">255.255</span>.0.0  broadcast <span class="token number">172.17</span>.255.255
+        ether 02:42:ac:11:00:02  txqueuelen <span class="token number">0</span>  <span class="token punctuation">(</span>Ethernet<span class="token punctuation">)</span>
+        RX packets <span class="token number">8</span>  bytes <span class="token number">656</span> <span class="token punctuation">(</span><span class="token number">656.0</span> B<span class="token punctuation">)</span>
+        RX errors <span class="token number">0</span>  dropped <span class="token number">0</span>  overruns <span class="token number">0</span>  frame <span class="token number">0</span>
+        TX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        TX errors <span class="token number">0</span>  dropped <span class="token number">0</span> overruns <span class="token number">0</span>  carrier <span class="token number">0</span>  collisions <span class="token number">0</span>
+
+lo: <span class="token assign-left variable">flags</span><span class="token operator">=</span><span class="token number">7</span><span class="token operator"><span class="token file-descriptor important">3</span>&lt;</span>UP,LOOPBACK,RUNNING<span class="token operator">&gt;</span>  mtu <span class="token number">65536</span>
+        inet <span class="token number">127.0</span>.0.1  netmask <span class="token number">255.0</span>.0.0
+        inet6 ::1  prefixlen <span class="token number">128</span>  scopeid 0x1<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>host<span class="token operator">&gt;</span>
+        loop  txqueuelen <span class="token number">1000</span>  <span class="token punctuation">(</span>Local Loopback<span class="token punctuation">)</span>
+        RX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        RX errors <span class="token number">0</span>  dropped <span class="token number">0</span>  overruns <span class="token number">0</span>  frame <span class="token number">0</span>
+        TX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        TX errors <span class="token number">0</span>  dropped <span class="token number">0</span> overruns <span class="token number">0</span>  carrier <span class="token number">0</span>  collisions <span class="token number">0</span>
+</code></pre></div><h3 id="实战-cmd-和-entrypoint的区别"><a href="#实战-cmd-和-entrypoint的区别" class="header-anchor">#</a> 实战：CMD 和 ENTRYPOINT的区别</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>CMD          <span class="token comment"># 启动容器时运行的shell命令，只有最后一个会生效,运行容器的指定命令会替代CMD</span>
+ENTRYPOINT   <span class="token comment"># 启动容器时运行的shell命令，运行容器时指定的命令会追加</span>
+</code></pre></div><p>测试CMD</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 创建dockerfile</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># vim mydockerfile-test</span>
+FROM centos
+CMD <span class="token punctuation">[</span><span class="token string">&quot;ls&quot;</span>,<span class="token string">&quot;-a&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 构建镜像</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker build -f mydockerfile-test -t cmdtest .</span>
+
+<span class="token comment"># 运行镜像</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker run -it cmdtest</span>
+<span class="token builtin class-name">.</span>   .dockerenv  dev  home  lib64       media  opt   root  sbin  sys  usr
+<span class="token punctuation">..</span>  bin         etc  lib   lost+found  mnt    proc  run   srv   tmp  var
+
+<span class="token comment"># 追加一个命令 -l 期望 ls -al  然而报错</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker run cmdtest -l</span>
+docker: Error response from daemon: failed to create task <span class="token keyword">for</span> container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: exec: <span class="token string">&quot;-l&quot;</span><span class="token builtin class-name">:</span> executable <span class="token function">file</span> not found <span class="token keyword">in</span> <span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span> unknown.
+
+<span class="token comment"># cmd的情况下 -l 替换了 CMD [&quot;ls&quot;,&quot;-a&quot;] 命令，然而 -l 并不是个命令，所以报错</span>
+</code></pre></div><p>测试ENTRYPOINT</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 创建dockerfile</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># vim mydockerfile-entrypoint</span>
+FROM centos
+ENTRYPOINT <span class="token punctuation">[</span><span class="token string">&quot;ls&quot;</span>,<span class="token string">&quot;-a&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 构建镜像</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker build -f mydockerfile-entrypoint -t myentrypoint .</span>
+
+<span class="token comment"># 运行镜像</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker run myentrypoint</span>
+<span class="token builtin class-name">.</span>
+<span class="token punctuation">..</span>
+.dockerenv
+bin
+dev
+etc
+home
+lib
+lib64
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+
+<span class="token comment"># 添加参数运行 -l 相当于运行 ls -al</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker run myentrypoint -l</span>
+total <span class="token number">56</span>
+drwxr-xr-x   <span class="token number">1</span> root root <span class="token number">4096</span> Aug <span class="token number">19</span> <span class="token number">13</span>:30 <span class="token builtin class-name">.</span>
+drwxr-xr-x   <span class="token number">1</span> root root <span class="token number">4096</span> Aug <span class="token number">19</span> <span class="token number">13</span>:30 <span class="token punctuation">..</span>
+-rwxr-xr-x   <span class="token number">1</span> root root    <span class="token number">0</span> Aug <span class="token number">19</span> <span class="token number">13</span>:30 .dockerenv
+lrwxrwxrwx   <span class="token number">1</span> root root    <span class="token number">7</span> Nov  <span class="token number">3</span>  <span class="token number">2020</span> bin -<span class="token operator">&gt;</span> usr/bin
+drwxr-xr-x   <span class="token number">5</span> root root  <span class="token number">340</span> Aug <span class="token number">19</span> <span class="token number">13</span>:30 dev
+drwxr-xr-x   <span class="token number">1</span> root root <span class="token number">4096</span> Aug <span class="token number">19</span> <span class="token number">13</span>:30 etc
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4096</span> Nov  <span class="token number">3</span>  <span class="token number">2020</span> home
+lrwxrwxrwx   <span class="token number">1</span> root root    <span class="token number">7</span> Nov  <span class="token number">3</span>  <span class="token number">2020</span> lib -<span class="token operator">&gt;</span> usr/lib
+lrwxrwxrwx   <span class="token number">1</span> root root    <span class="token number">9</span> Nov  <span class="token number">3</span>  <span class="token number">2020</span> lib64 -<span class="token operator">&gt;</span> usr/lib64
+drwx------   <span class="token number">2</span> root root <span class="token number">4096</span> Sep <span class="token number">15</span>  <span class="token number">2021</span> lost+found
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4096</span> Nov  <span class="token number">3</span>  <span class="token number">2020</span> media
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4096</span> Nov  <span class="token number">3</span>  <span class="token number">2020</span> mnt
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4096</span> Nov  <span class="token number">3</span>  <span class="token number">2020</span> opt
+dr-xr-xr-x <span class="token number">125</span> root root    <span class="token number">0</span> Aug <span class="token number">19</span> <span class="token number">13</span>:30 proc
+dr-xr-x---   <span class="token number">2</span> root root <span class="token number">4096</span> Sep <span class="token number">15</span>  <span class="token number">2021</span> root
+drwxr-xr-x  <span class="token number">11</span> root root <span class="token number">4096</span> Sep <span class="token number">15</span>  <span class="token number">2021</span> run
+lrwxrwxrwx   <span class="token number">1</span> root root    <span class="token number">8</span> Nov  <span class="token number">3</span>  <span class="token number">2020</span> sbin -<span class="token operator">&gt;</span> usr/sbin
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4096</span> Nov  <span class="token number">3</span>  <span class="token number">2020</span> srv
+dr-xr-xr-x  <span class="token number">13</span> root root    <span class="token number">0</span> Aug <span class="token number">17</span> <span class="token number">10</span>:04 sys
+drwxrwxrwt   <span class="token number">7</span> root root <span class="token number">4096</span> Sep <span class="token number">15</span>  <span class="token number">2021</span> tmp
+drwxr-xr-x  <span class="token number">12</span> root root <span class="token number">4096</span> Sep <span class="token number">15</span>  <span class="token number">2021</span> usr
+drwxr-xr-x  <span class="token number">20</span> root root <span class="token number">4096</span> Sep <span class="token number">15</span>  <span class="token number">2021</span> var
+</code></pre></div><h3 id="实战-tomcat镜像"><a href="#实战-tomcat镜像" class="header-anchor">#</a> 实战：Tomcat镜像</h3> <p>1、准备镜像文件 tomcat 压缩包，jdk压缩包</p> <p>2、编写dockerfile文件,官方推荐命名Dockerfile</p> <div class="language-shell extra-class"><pre class="language-shell"><code>FROM centos
+MAINTAINER huyadish<span class="token operator">&lt;</span>huyadish@163.com<span class="token operator">&gt;</span>
+
+COPY README.md /usr/local/README.md
+
+ADD jdk-8u161-linux-x64.tar.gz /usr/local
+ADD apache-tomcat-8.5.55.tar.gz /usr/local
+
+<span class="token comment"># RUN yum -y install vim</span>
+
+ENV MYPATH /usr/local
+WORKDIR <span class="token variable">$MYPATH</span>
+
+ENV JAVA_HOME /usr/local/jdk1.8.0_161
+ENV CLASSPATH <span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib/tools.jar
+ENV CATALINA_HOME /usr/local/apache-tomcat-8.5.55
+ENV CATALINA_BASE /usr/local/apache-tomcat-8.5.55
+ENV <span class="token environment constant">PATH</span> <span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token variable">$CATALINA_HOME</span>/lib:<span class="token variable">$CATALINA_HOME</span>/bin
+
+EXPOSE <span class="token number">8080</span>
+
+CMD  /usr/local/apache-tomcat-8.5.55/bin/startup.sh <span class="token operator">&amp;&amp;</span> <span class="token function">tail</span> <span class="token parameter variable">-F</span> /usr/local/apache-tomcat-8.5.55/bin/logs/catalin
+a.out
+</code></pre></div><p>3、构建镜像</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker build -t mytomcat .   </span>
+</code></pre></div><p>4、运行镜像</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 运行并挂载数据卷</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker run -d -p 9090:8080 --name huyadish-tomcat -v /home/huyadish/build/tomcat/test/:/usr/local/apache-tomcat-8.5.55/webapps/test -v /home/huyadish/build/tomcat/logs/:/usr/local/apache-tomcat-8.5.55/logs mytomcat</span>
+31a90f439ab5aad6c99e37cb4803b54bb4e31608f0cf818b99e2c957570781fe
+
+<span class="token comment"># 进入容器</span>
+<span class="token punctuation">[</span>root@VM-20-7-centos dockerfile<span class="token punctuation">]</span><span class="token comment"># docker exec -it 31a90f4 /bin/bash</span>
+
+<span class="token comment"># 可以看到已经解压的 tomcat 和 jdk</span>
+<span class="token punctuation">[</span>root@31a90f439ab5 local<span class="token punctuation">]</span><span class="token comment"># ls</span>
+README.md  apache-tomcat-8.5.55  bin  etc  games  include  jdk1.8.0_161  lib  lib64  libexec  sbin  share  src
+
+<span class="token comment"># 工作目录也切换到了 /usr/local</span>
+<span class="token punctuation">[</span>root@31a90f439ab5 local<span class="token punctuation">]</span><span class="token comment"># pwd</span>
+/usr/local
+
+
+<span class="token punctuation">[</span>root@31a90f439ab5 local<span class="token punctuation">]</span><span class="token comment"># cd apache-tomcat-8.5.55/</span>
+<span class="token punctuation">[</span>root@31a90f439ab5 apache-tomcat-8.5.55<span class="token punctuation">]</span><span class="token comment"># ls</span>
+BUILDING.txt     LICENSE  README.md      RUNNING.txt  conf  logs  webapps
+CONTRIBUTING.md  NOTICE   RELEASE-NOTES  bin          lib   temp  work
+
+<span class="token comment"># 此时通过外网也可以访问</span>
+</code></pre></div><p>5、发布项目（由于做了卷挂载，我们直接在本地编写项目就可以）</p> <ul><li>web.xml</li></ul> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">&quot;</span></span> 
+ <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://java.sun.com/xml/ns/javaee<span class="token punctuation">&quot;</span></span>
+ <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://java.sun.com/xml/ns/javaee 
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd<span class="token punctuation">&quot;</span></span>
+ <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>WebApp_ID<span class="token punctuation">&quot;</span></span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>2.5<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>display-name</span><span class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>display-name</span><span class="token punctuation">&gt;</span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>a.jsp</li></ul> <div class="language-jsp extra-class"><pre class="language-text"><code>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; 
+pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt; 
+ &lt;head&gt;
+   &lt;meta charset=&quot;utf-8&quot;&gt; 
+   &lt;title&gt;hello，huyadish&lt;/title&gt;
+ &lt;/head&gt; 
+ &lt;body&gt;
+	hello,world!&lt;br&gt;
+   &lt;% System.out.println(&quot;-------my docker tomcat-------&quot;);%&gt; 
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p>P31</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/19/2024, 3:32:17 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/back-end/docker/" class="prev router-link-active">
+        ♥Docker♥
+      </a></span> <span class="next"><a href="/back-end/docker/Docker常用命令.html">
+        Docker常用命令
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.9d17c74a.js" defer></script><script src="/assets/js/2.4829a41e.js" defer></script><script src="/assets/js/1.21e39df5.js" defer></script><script src="/assets/js/23.768a6a1f.js" defer></script>
+  </body>
+</html>
