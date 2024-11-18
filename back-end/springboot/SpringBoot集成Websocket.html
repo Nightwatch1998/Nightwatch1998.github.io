@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringBoot集成Websocket | NightWatch</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/favicon.png">
+    <meta name="description" content="编程，从入门到入土">
+    
+    <link rel="preload" href="/assets/css/0.styles.4c261fea.css" as="style"><link rel="preload" href="/assets/js/app.a43011d1.js" as="script"><link rel="preload" href="/assets/js/2.4829a41e.js" as="script"><link rel="preload" href="/assets/js/1.21e39df5.js" as="script"><link rel="preload" href="/assets/js/64.897c8dd3.js" as="script"><link rel="prefetch" href="/assets/js/10.36ab4607.js"><link rel="prefetch" href="/assets/js/100.a07dc55d.js"><link rel="prefetch" href="/assets/js/101.51d25663.js"><link rel="prefetch" href="/assets/js/102.a8e7df7e.js"><link rel="prefetch" href="/assets/js/103.8d1ae7ba.js"><link rel="prefetch" href="/assets/js/104.749654da.js"><link rel="prefetch" href="/assets/js/105.c0727839.js"><link rel="prefetch" href="/assets/js/106.7dc2dea8.js"><link rel="prefetch" href="/assets/js/107.2873f2a3.js"><link rel="prefetch" href="/assets/js/108.3731e645.js"><link rel="prefetch" href="/assets/js/109.464e07f7.js"><link rel="prefetch" href="/assets/js/11.9d26e9af.js"><link rel="prefetch" href="/assets/js/110.1785b540.js"><link rel="prefetch" href="/assets/js/111.365ce394.js"><link rel="prefetch" href="/assets/js/112.0e3bda2b.js"><link rel="prefetch" href="/assets/js/113.da0a6724.js"><link rel="prefetch" href="/assets/js/114.9caef20e.js"><link rel="prefetch" href="/assets/js/115.97cf02b7.js"><link rel="prefetch" href="/assets/js/116.789d0daa.js"><link rel="prefetch" href="/assets/js/117.8fbc23ea.js"><link rel="prefetch" href="/assets/js/118.bc14f7a4.js"><link rel="prefetch" href="/assets/js/119.2f79aa5a.js"><link rel="prefetch" href="/assets/js/12.0b61f8e9.js"><link rel="prefetch" href="/assets/js/120.823a9cea.js"><link rel="prefetch" href="/assets/js/121.6a4489b1.js"><link rel="prefetch" href="/assets/js/122.88969dfb.js"><link rel="prefetch" href="/assets/js/123.46bacf01.js"><link rel="prefetch" href="/assets/js/124.ebdfb9fc.js"><link rel="prefetch" href="/assets/js/125.1e0fc2f0.js"><link rel="prefetch" href="/assets/js/126.d8e13fb6.js"><link rel="prefetch" href="/assets/js/127.c3892ff7.js"><link rel="prefetch" href="/assets/js/128.2cbf525e.js"><link rel="prefetch" href="/assets/js/129.b95cecc7.js"><link rel="prefetch" href="/assets/js/13.152b21ae.js"><link rel="prefetch" href="/assets/js/130.4efe293d.js"><link rel="prefetch" href="/assets/js/131.faa7e25c.js"><link rel="prefetch" href="/assets/js/132.e7190253.js"><link rel="prefetch" href="/assets/js/133.087a68f5.js"><link rel="prefetch" href="/assets/js/134.235fc62c.js"><link rel="prefetch" href="/assets/js/135.04944497.js"><link rel="prefetch" href="/assets/js/136.d5dab09b.js"><link rel="prefetch" href="/assets/js/137.15a73947.js"><link rel="prefetch" href="/assets/js/138.3c018585.js"><link rel="prefetch" href="/assets/js/139.90bf5d75.js"><link rel="prefetch" href="/assets/js/14.601864c0.js"><link rel="prefetch" href="/assets/js/140.629d966c.js"><link rel="prefetch" href="/assets/js/141.59bfa380.js"><link rel="prefetch" href="/assets/js/142.37add372.js"><link rel="prefetch" href="/assets/js/15.1ca2d588.js"><link rel="prefetch" href="/assets/js/16.f4f9fc10.js"><link rel="prefetch" href="/assets/js/17.c0c7e874.js"><link rel="prefetch" href="/assets/js/18.1dcc6d96.js"><link rel="prefetch" href="/assets/js/19.eb1d2ccc.js"><link rel="prefetch" href="/assets/js/20.e0b38ec4.js"><link rel="prefetch" href="/assets/js/21.78e23c64.js"><link rel="prefetch" href="/assets/js/22.2aa7a141.js"><link rel="prefetch" href="/assets/js/23.44c58c4c.js"><link rel="prefetch" href="/assets/js/24.0840f4e5.js"><link rel="prefetch" href="/assets/js/25.58e5e2bb.js"><link rel="prefetch" href="/assets/js/26.117af3de.js"><link rel="prefetch" href="/assets/js/27.21f17c05.js"><link rel="prefetch" href="/assets/js/28.c1a21400.js"><link rel="prefetch" href="/assets/js/29.73cf9cfe.js"><link rel="prefetch" href="/assets/js/3.ce969d4f.js"><link rel="prefetch" href="/assets/js/30.89a7dd5d.js"><link rel="prefetch" href="/assets/js/31.d17540eb.js"><link rel="prefetch" href="/assets/js/32.58394ca4.js"><link rel="prefetch" href="/assets/js/33.4bd425cb.js"><link rel="prefetch" href="/assets/js/34.7bef359c.js"><link rel="prefetch" href="/assets/js/35.2a1b0457.js"><link rel="prefetch" href="/assets/js/36.90856356.js"><link rel="prefetch" href="/assets/js/37.7b5bad62.js"><link rel="prefetch" href="/assets/js/38.008bb40d.js"><link rel="prefetch" href="/assets/js/39.6b2a0153.js"><link rel="prefetch" href="/assets/js/4.b8125ad6.js"><link rel="prefetch" href="/assets/js/40.7bb9c709.js"><link rel="prefetch" href="/assets/js/41.17ac3941.js"><link rel="prefetch" href="/assets/js/42.d993a8f7.js"><link rel="prefetch" href="/assets/js/43.17017893.js"><link rel="prefetch" href="/assets/js/44.5aeb8841.js"><link rel="prefetch" href="/assets/js/45.f96b17d1.js"><link rel="prefetch" href="/assets/js/46.7be334fe.js"><link rel="prefetch" href="/assets/js/47.ac4c7dc5.js"><link rel="prefetch" href="/assets/js/48.35994a43.js"><link rel="prefetch" href="/assets/js/49.345a6aed.js"><link rel="prefetch" href="/assets/js/5.2d50631a.js"><link rel="prefetch" href="/assets/js/50.8ea6eace.js"><link rel="prefetch" href="/assets/js/51.a26f2640.js"><link rel="prefetch" href="/assets/js/52.58d1f5a0.js"><link rel="prefetch" href="/assets/js/53.fc8989a8.js"><link rel="prefetch" href="/assets/js/54.24b38690.js"><link rel="prefetch" href="/assets/js/55.bbdb58ff.js"><link rel="prefetch" href="/assets/js/56.9a38da2e.js"><link rel="prefetch" href="/assets/js/57.a9cd4bd6.js"><link rel="prefetch" href="/assets/js/58.4e0a8a9f.js"><link rel="prefetch" href="/assets/js/59.cdc5a0d5.js"><link rel="prefetch" href="/assets/js/6.674e2ad9.js"><link rel="prefetch" href="/assets/js/60.723f1a27.js"><link rel="prefetch" href="/assets/js/61.3bf871d4.js"><link rel="prefetch" href="/assets/js/62.5f62b96b.js"><link rel="prefetch" href="/assets/js/63.69d09180.js"><link rel="prefetch" href="/assets/js/65.d8564a1a.js"><link rel="prefetch" href="/assets/js/66.5b7e2f53.js"><link rel="prefetch" href="/assets/js/67.d8972204.js"><link rel="prefetch" href="/assets/js/68.3f83c207.js"><link rel="prefetch" href="/assets/js/69.f1aed24a.js"><link rel="prefetch" href="/assets/js/7.f1dd9a86.js"><link rel="prefetch" href="/assets/js/70.5702c0b9.js"><link rel="prefetch" href="/assets/js/71.69b8d1db.js"><link rel="prefetch" href="/assets/js/72.f27072a6.js"><link rel="prefetch" href="/assets/js/73.3b621b4c.js"><link rel="prefetch" href="/assets/js/74.17d84a41.js"><link rel="prefetch" href="/assets/js/75.3208bb74.js"><link rel="prefetch" href="/assets/js/76.fe379f7e.js"><link rel="prefetch" href="/assets/js/77.c5242dad.js"><link rel="prefetch" href="/assets/js/78.94069a7f.js"><link rel="prefetch" href="/assets/js/79.4ee1a901.js"><link rel="prefetch" href="/assets/js/80.c8e7bf62.js"><link rel="prefetch" href="/assets/js/81.db0cf0e2.js"><link rel="prefetch" href="/assets/js/82.e9e15f40.js"><link rel="prefetch" href="/assets/js/83.c1a8d134.js"><link rel="prefetch" href="/assets/js/84.51113044.js"><link rel="prefetch" href="/assets/js/85.a5c6d7b8.js"><link rel="prefetch" href="/assets/js/86.780179b8.js"><link rel="prefetch" href="/assets/js/87.04fc85c0.js"><link rel="prefetch" href="/assets/js/88.2dd99180.js"><link rel="prefetch" href="/assets/js/89.9bf2f377.js"><link rel="prefetch" href="/assets/js/90.bfe006b0.js"><link rel="prefetch" href="/assets/js/91.b44bdf21.js"><link rel="prefetch" href="/assets/js/92.0615f83e.js"><link rel="prefetch" href="/assets/js/93.fad93a14.js"><link rel="prefetch" href="/assets/js/94.160fb6b6.js"><link rel="prefetch" href="/assets/js/95.15012030.js"><link rel="prefetch" href="/assets/js/96.6328256a.js"><link rel="prefetch" href="/assets/js/97.57285c8e.js"><link rel="prefetch" href="/assets/js/98.e730b241.js"><link rel="prefetch" href="/assets/js/99.2b4bb67f.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.271bc088.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4c261fea.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">NightWatch</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front-end/Basic/" class="nav-link">
+  前端基础
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/前端工程化/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/性能优化/" class="nav-link">
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/数据格式/" class="nav-link">
+  数据格式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/environment/" class="nav-link">
+  环境配置
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/mysql/" class="nav-link">
+  MySQL数据库
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/springboot/" class="nav-link router-link-active">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/computer/linux/" class="nav-link">
+  Linux操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/computer/windows/" class="nav-link">
+  Windows操作系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/GIS原理/" class="nav-link">
+  GIS原理
+</a></li><li class="dropdown-item"><!----> <a href="/gis/WebGIS/" class="nav-link">
+  WebGIS开发
+</a></li><li class="dropdown-item"><!----> <a href="/gis/地图学/" class="nav-link">
+  地图学
+</a></li><li class="dropdown-item"><!----> <a href="/gis/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/gis/tools/" class="nav-link">
+  GIS工具
+</a></li></ul></div></div><div class="nav-item"><a href="/rong/" class="nav-link">
+  Rong
+</a></div><div class="nav-item"><a href="/others/" class="nav-link">
+  其他
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front-end/Basic/" class="nav-link">
+  前端基础
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/前端工程化/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/性能优化/" class="nav-link">
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/数据格式/" class="nav-link">
+  数据格式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/environment/" class="nav-link">
+  环境配置
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/mysql/" class="nav-link">
+  MySQL数据库
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/springboot/" class="nav-link router-link-active">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/computer/linux/" class="nav-link">
+  Linux操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/computer/windows/" class="nav-link">
+  Windows操作系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/GIS原理/" class="nav-link">
+  GIS原理
+</a></li><li class="dropdown-item"><!----> <a href="/gis/WebGIS/" class="nav-link">
+  WebGIS开发
+</a></li><li class="dropdown-item"><!----> <a href="/gis/地图学/" class="nav-link">
+  地图学
+</a></li><li class="dropdown-item"><!----> <a href="/gis/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/gis/tools/" class="nav-link">
+  GIS工具
+</a></li></ul></div></div><div class="nav-item"><a href="/rong/" class="nav-link">
+  Rong
+</a></div><div class="nav-item"><a href="/others/" class="nav-link">
+  其他
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Springboot</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/back-end/springboot/" aria-current="page" class="sidebar-link">♥SpringBoot家族♥</a></li><li><a href="/back-end/springboot/MyBatis从入门到精通.html" class="sidebar-link">MyBatis从入门到精通</a></li><li><a href="/back-end/springboot/MybatisPlus从入门到精通.html" class="sidebar-link">MyBatisPlus从入门到精通</a></li><li><a href="/back-end/springboot/SpringBoot分库分表.html" class="sidebar-link">SpringBoot分库分表</a></li><li><a href="/back-end/springboot/SpringBoot参数校验-文档.html" class="sidebar-link">SpringBoot 学习</a></li><li><a href="/back-end/springboot/SpringBoot应用部署.html" class="sidebar-link">SpringBoot应用部署</a></li><li><a href="/back-end/springboot/SpringBoot日志.html" class="sidebar-link">SpringBoot日志</a></li><li><a href="/back-end/springboot/SpringBoot热更新.html" class="sidebar-link">SpringBoot热更新</a></li><li><a href="/back-end/springboot/SpringBoot连接MySQL.html" class="sidebar-link">Springboot 数据库连接</a></li><li><a href="/back-end/springboot/SpringBoot连接Redis.html" class="sidebar-link">SpringBoot连接Redis</a></li><li><a href="/back-end/springboot/SpringBoot集成Websocket.html" class="active sidebar-link">SpringBoot集成Websocket</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/back-end/springboot/SpringBoot集成Websocket.html#websocket简介" class="sidebar-link">Websocket简介</a></li><li class="sidebar-sub-header"><a href="/back-end/springboot/SpringBoot集成Websocket.html#使用方式1" class="sidebar-link">使用方式1</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/back-end/springboot/SpringBoot集成Websocket.html#引入依赖" class="sidebar-link">引入依赖</a></li><li class="sidebar-sub-header"><a href="/back-end/springboot/SpringBoot集成Websocket.html#注册" class="sidebar-link">注册</a></li><li class="sidebar-sub-header"><a href="/back-end/springboot/SpringBoot集成Websocket.html#配置serverendpoint和使用" class="sidebar-link">配置serverEndPoint和使用</a></li></ul></li></ul></li><li><a href="/back-end/springboot/SpringBoot集成文件.html" class="sidebar-link">SpringBoot集成文件</a></li><li><a href="/back-end/springboot/SpringSecurity从入门到精通.html" class="sidebar-link">SpringSecurity从入门到精通</a></li><li><a href="/back-end/springboot/Springboot连接池.html" class="sidebar-link">Springboot数据库连接池</a></li><li><a href="/back-end/springboot/Springboot配置.html" class="sidebar-link">Springboot环境配置</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="springboot集成websocket"><a href="#springboot集成websocket" class="header-anchor">#</a> SpringBoot集成Websocket</h1> <h2 id="websocket简介"><a href="#websocket简介" class="header-anchor">#</a> Websocket简介</h2> <p>与HTTP的区别：</p> <ol><li>连接方式：HTTP是请求-响应模式，每次请求后会关闭，WS是一种持久的连接方式</li> <li>通信模式：HTTP采用轮询或长轮询方式、WS采用全双工通信</li> <li>性能开销：HTTP每次通信都需要建立和关闭连接，WS在连接建立后可以多次发送或接收数据</li></ol> <h2 id="使用方式1"><a href="#使用方式1" class="header-anchor">#</a> 使用方式1</h2> <h3 id="引入依赖"><a href="#引入依赖" class="header-anchor">#</a> 引入依赖</h3> <div class="language-xml extra-class"><pre class="language-xml"><code>		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-websocket<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.1.6.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>版本可根据情况选择</p> <h3 id="注册"><a href="#注册" class="header-anchor">#</a> 注册</h3> <p>帮助我们自动注册接入端点，但是仍需要手动配置@ServerEndPoint</p> <p>WebsocketConfig文件</p> <div class="language-xml extra-class"><pre class="language-xml"><code>@Configuration
+public class WebSocketConfig {
+	 /**
+     * ServerEndpointExporter 作用
+     *
+     * 这个Bean会自动注册使用@ServerEndpoint注解声明的websocket endpoint
+     *
+     * @return
+     */
+	@Bean
+    public ServerEndpointExporter serverEndpointExporter() {
+        return new ServerEndpointExporter();
+    }
+
+}
+</code></pre></div><h3 id="配置serverendpoint和使用"><a href="#配置serverendpoint和使用" class="header-anchor">#</a> 配置serverEndPoint和使用</h3> <p>WebSocketServer文件</p> <blockquote><p>websocket的核心就是session的使用，发送消息和接受消息都需要session</p> <p>基本的使用方式需要OnOpen、OnClose、OnMessage、OnError四个注解</p></blockquote> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@ServerEndpoint</span><span class="token punctuation">(</span><span class="token string">&quot;/webSocket/{username}&quot;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WebSocketServer</span> <span class="token punctuation">{</span>
+	 <span class="token comment">//静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">AtomicInteger</span> onlineNum <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AtomicInteger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//concurrent包的线程安全Set，用来存放每个客户端对应的WebSocketServer对象。</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">ConcurrentHashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Session</span><span class="token punctuation">&gt;</span></span> sessionPools <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ConcurrentHashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//发送消息</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendMessage</span><span class="token punctuation">(</span><span class="token class-name">Session</span> session<span class="token punctuation">,</span> <span class="token class-name">String</span> message<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>session <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>session<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;发送数据：&quot;</span> <span class="token operator">+</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                session<span class="token punctuation">.</span><span class="token function">getBasicRemote</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sendText</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//给指定用户发送信息</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendInfo</span><span class="token punctuation">(</span><span class="token class-name">String</span> userName<span class="token punctuation">,</span> <span class="token class-name">String</span> message<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Session</span> session <span class="token operator">=</span> sessionPools<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>userName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token function">sendMessage</span><span class="token punctuation">(</span>session<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 群发消息</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">broadcast</span><span class="token punctuation">(</span><span class="token class-name">String</span> message<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Session</span> session<span class="token operator">:</span> sessionPools<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token function">sendMessage</span><span class="token punctuation">(</span>session<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//建立连接成功调用</span>
+    <span class="token annotation punctuation">@OnOpen</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onOpen</span><span class="token punctuation">(</span><span class="token class-name">Session</span> session<span class="token punctuation">,</span> <span class="token annotation punctuation">@PathParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">&quot;username&quot;</span><span class="token punctuation">)</span> <span class="token class-name">String</span> userName<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        sessionPools<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>userName<span class="token punctuation">,</span> session<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">addOnlineCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>userName <span class="token operator">+</span> <span class="token string">&quot;加入webSocket！当前人数为&quot;</span> <span class="token operator">+</span> onlineNum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 广播上线消息</span>
+        <span class="token class-name">Message</span> msg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Message</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        msg<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        msg<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token string">&quot;0&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        msg<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>userName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">broadcast</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//关闭连接时调用</span>
+    <span class="token annotation punctuation">@OnClose</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onClose</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">&quot;username&quot;</span><span class="token punctuation">)</span> <span class="token class-name">String</span> userName<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        sessionPools<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>userName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">subOnlineCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>userName <span class="token operator">+</span> <span class="token string">&quot;断开webSocket连接！当前人数为&quot;</span> <span class="token operator">+</span> onlineNum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 广播下线消息</span>
+        <span class="token class-name">Message</span> msg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Message</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        msg<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        msg<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token string">&quot;-2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        msg<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>userName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">broadcast</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//收到客户端信息后，根据接收人的username把消息推下去或者群发</span>
+    <span class="token comment">// to=-1群发消息</span>
+    <span class="token annotation punctuation">@OnMessage</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onMessage</span><span class="token punctuation">(</span><span class="token class-name">String</span> message<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;server get&quot;</span> <span class="token operator">+</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Message</span> msg<span class="token operator">=</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parseObject</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> <span class="token class-name">Message</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		msg<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>msg<span class="token punctuation">.</span><span class="token function">getTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">&quot;-1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token function">broadcast</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			<span class="token function">sendInfo</span><span class="token punctuation">(</span>msg<span class="token punctuation">.</span><span class="token function">getTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//错误时调用</span>
+    <span class="token annotation punctuation">@OnError</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onError</span><span class="token punctuation">(</span><span class="token class-name">Session</span> session<span class="token punctuation">,</span> <span class="token class-name">Throwable</span> throwable<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;发生错误&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        throwable<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">addOnlineCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        onlineNum<span class="token punctuation">.</span><span class="token function">incrementAndGet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">subOnlineCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        onlineNum<span class="token punctuation">.</span><span class="token function">decrementAndGet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">AtomicInteger</span> <span class="token function">getOnlineNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> onlineNum<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ConcurrentHashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Session</span><span class="token punctuation">&gt;</span></span> <span class="token function">getSessionPools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> sessionPools<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/18/2024, 4:01:47 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/back-end/springboot/SpringBoot连接Redis.html" class="prev">
+        SpringBoot连接Redis
+      </a></span> <span class="next"><a href="/back-end/springboot/SpringBoot集成文件.html">
+        SpringBoot集成文件
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.a43011d1.js" defer></script><script src="/assets/js/2.4829a41e.js" defer></script><script src="/assets/js/1.21e39df5.js" defer></script><script src="/assets/js/64.897c8dd3.js" defer></script>
+  </body>
+</html>
