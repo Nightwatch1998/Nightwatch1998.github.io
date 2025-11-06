@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pytorch学习记录 | NightWatch</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/favicon.png">
+    <meta name="description" content="编程，从入门到入土">
+    
+    <link rel="preload" href="/assets/css/0.styles.4c261fea.css" as="style"><link rel="preload" href="/assets/js/app.152851cd.js" as="script"><link rel="preload" href="/assets/js/2.4829a41e.js" as="script"><link rel="preload" href="/assets/js/1.21e39df5.js" as="script"><link rel="preload" href="/assets/js/27.b2aec021.js" as="script"><link rel="prefetch" href="/assets/js/10.36ab4607.js"><link rel="prefetch" href="/assets/js/100.ee231899.js"><link rel="prefetch" href="/assets/js/101.70a32198.js"><link rel="prefetch" href="/assets/js/102.b4dcf065.js"><link rel="prefetch" href="/assets/js/103.7cd5aa6c.js"><link rel="prefetch" href="/assets/js/104.0b56c0a1.js"><link rel="prefetch" href="/assets/js/105.c4311cd0.js"><link rel="prefetch" href="/assets/js/106.03c2918e.js"><link rel="prefetch" href="/assets/js/107.89627f4a.js"><link rel="prefetch" href="/assets/js/108.f773444b.js"><link rel="prefetch" href="/assets/js/109.1cfeee8e.js"><link rel="prefetch" href="/assets/js/11.9d26e9af.js"><link rel="prefetch" href="/assets/js/110.a8c83768.js"><link rel="prefetch" href="/assets/js/111.30505212.js"><link rel="prefetch" href="/assets/js/112.6970d919.js"><link rel="prefetch" href="/assets/js/113.f1ba13a2.js"><link rel="prefetch" href="/assets/js/114.b683c34e.js"><link rel="prefetch" href="/assets/js/115.4d9b4bc0.js"><link rel="prefetch" href="/assets/js/116.3f9d07e2.js"><link rel="prefetch" href="/assets/js/117.0861fa5e.js"><link rel="prefetch" href="/assets/js/118.2bd085f4.js"><link rel="prefetch" href="/assets/js/119.e1518388.js"><link rel="prefetch" href="/assets/js/12.0b61f8e9.js"><link rel="prefetch" href="/assets/js/120.d6d26b43.js"><link rel="prefetch" href="/assets/js/121.521ffd9a.js"><link rel="prefetch" href="/assets/js/122.c7df93f5.js"><link rel="prefetch" href="/assets/js/123.dd43abd8.js"><link rel="prefetch" href="/assets/js/124.8cb614a0.js"><link rel="prefetch" href="/assets/js/125.08054110.js"><link rel="prefetch" href="/assets/js/126.fce2be4c.js"><link rel="prefetch" href="/assets/js/127.4b5ed28a.js"><link rel="prefetch" href="/assets/js/128.91864df0.js"><link rel="prefetch" href="/assets/js/129.aa9546ac.js"><link rel="prefetch" href="/assets/js/13.152b21ae.js"><link rel="prefetch" href="/assets/js/130.7629ab4e.js"><link rel="prefetch" href="/assets/js/131.ebb2679e.js"><link rel="prefetch" href="/assets/js/132.d1e53ca8.js"><link rel="prefetch" href="/assets/js/133.6240a9d8.js"><link rel="prefetch" href="/assets/js/134.a68c9841.js"><link rel="prefetch" href="/assets/js/135.8be78069.js"><link rel="prefetch" href="/assets/js/136.8761699f.js"><link rel="prefetch" href="/assets/js/137.7525e5d0.js"><link rel="prefetch" href="/assets/js/138.a2b50170.js"><link rel="prefetch" href="/assets/js/139.850b637e.js"><link rel="prefetch" href="/assets/js/14.601864c0.js"><link rel="prefetch" href="/assets/js/140.b0c879a2.js"><link rel="prefetch" href="/assets/js/141.ba75d37a.js"><link rel="prefetch" href="/assets/js/142.355821f0.js"><link rel="prefetch" href="/assets/js/143.6a27e7a5.js"><link rel="prefetch" href="/assets/js/144.f58f0402.js"><link rel="prefetch" href="/assets/js/145.6a1e3d36.js"><link rel="prefetch" href="/assets/js/146.4365238a.js"><link rel="prefetch" href="/assets/js/147.1e3e4904.js"><link rel="prefetch" href="/assets/js/148.a56f28e7.js"><link rel="prefetch" href="/assets/js/149.e450ae7c.js"><link rel="prefetch" href="/assets/js/15.1ca2d588.js"><link rel="prefetch" href="/assets/js/150.1086b844.js"><link rel="prefetch" href="/assets/js/151.6968ae91.js"><link rel="prefetch" href="/assets/js/152.4e421bfd.js"><link rel="prefetch" href="/assets/js/153.cb416dc1.js"><link rel="prefetch" href="/assets/js/16.f4f9fc10.js"><link rel="prefetch" href="/assets/js/17.c0c7e874.js"><link rel="prefetch" href="/assets/js/18.1dcc6d96.js"><link rel="prefetch" href="/assets/js/19.eb1d2ccc.js"><link rel="prefetch" href="/assets/js/20.e0b38ec4.js"><link rel="prefetch" href="/assets/js/21.78e23c64.js"><link rel="prefetch" href="/assets/js/22.2aa7a141.js"><link rel="prefetch" href="/assets/js/23.4335cb2f.js"><link rel="prefetch" href="/assets/js/24.35ee002e.js"><link rel="prefetch" href="/assets/js/25.96ecf866.js"><link rel="prefetch" href="/assets/js/26.4f2285bc.js"><link rel="prefetch" href="/assets/js/28.be17cf0b.js"><link rel="prefetch" href="/assets/js/29.00f3c46f.js"><link rel="prefetch" href="/assets/js/3.ce969d4f.js"><link rel="prefetch" href="/assets/js/30.17643a8f.js"><link rel="prefetch" href="/assets/js/31.6d1a9cbb.js"><link rel="prefetch" href="/assets/js/32.84c50a11.js"><link rel="prefetch" href="/assets/js/33.be8bcb00.js"><link rel="prefetch" href="/assets/js/34.568cef88.js"><link rel="prefetch" href="/assets/js/35.d691da45.js"><link rel="prefetch" href="/assets/js/36.552ab55b.js"><link rel="prefetch" href="/assets/js/37.4b1514ba.js"><link rel="prefetch" href="/assets/js/38.63fbdc17.js"><link rel="prefetch" href="/assets/js/39.7356cc43.js"><link rel="prefetch" href="/assets/js/4.b8125ad6.js"><link rel="prefetch" href="/assets/js/40.016097e2.js"><link rel="prefetch" href="/assets/js/41.1fd6fe50.js"><link rel="prefetch" href="/assets/js/42.1e0484f7.js"><link rel="prefetch" href="/assets/js/43.0833ae3e.js"><link rel="prefetch" href="/assets/js/44.22948210.js"><link rel="prefetch" href="/assets/js/45.65f80ff6.js"><link rel="prefetch" href="/assets/js/46.76264ab6.js"><link rel="prefetch" href="/assets/js/47.a1019b62.js"><link rel="prefetch" href="/assets/js/48.da47945f.js"><link rel="prefetch" href="/assets/js/49.518fe4a7.js"><link rel="prefetch" href="/assets/js/5.2d50631a.js"><link rel="prefetch" href="/assets/js/50.dec36647.js"><link rel="prefetch" href="/assets/js/51.ec1daa9f.js"><link rel="prefetch" href="/assets/js/52.f31794fd.js"><link rel="prefetch" href="/assets/js/53.635acefd.js"><link rel="prefetch" href="/assets/js/54.92efcd19.js"><link rel="prefetch" href="/assets/js/55.d3bfbcc5.js"><link rel="prefetch" href="/assets/js/56.0e503e13.js"><link rel="prefetch" href="/assets/js/57.5bb5ea33.js"><link rel="prefetch" href="/assets/js/58.fb51b6f1.js"><link rel="prefetch" href="/assets/js/59.4dd137d9.js"><link rel="prefetch" href="/assets/js/6.674e2ad9.js"><link rel="prefetch" href="/assets/js/60.342ec006.js"><link rel="prefetch" href="/assets/js/61.09fc7972.js"><link rel="prefetch" href="/assets/js/62.2922854b.js"><link rel="prefetch" href="/assets/js/63.eea8e111.js"><link rel="prefetch" href="/assets/js/64.b91fb9e3.js"><link rel="prefetch" href="/assets/js/65.fe2d4090.js"><link rel="prefetch" href="/assets/js/66.ca92ce2e.js"><link rel="prefetch" href="/assets/js/67.e63bbb55.js"><link rel="prefetch" href="/assets/js/68.400e188a.js"><link rel="prefetch" href="/assets/js/69.16cf13b0.js"><link rel="prefetch" href="/assets/js/7.f1dd9a86.js"><link rel="prefetch" href="/assets/js/70.e960b95a.js"><link rel="prefetch" href="/assets/js/71.426773e3.js"><link rel="prefetch" href="/assets/js/72.f57333b2.js"><link rel="prefetch" href="/assets/js/73.da94aa5c.js"><link rel="prefetch" href="/assets/js/74.93f80b5a.js"><link rel="prefetch" href="/assets/js/75.0bc71710.js"><link rel="prefetch" href="/assets/js/76.934cae59.js"><link rel="prefetch" href="/assets/js/77.915a32f3.js"><link rel="prefetch" href="/assets/js/78.e35d2726.js"><link rel="prefetch" href="/assets/js/79.e6a5f780.js"><link rel="prefetch" href="/assets/js/80.fdbaae6d.js"><link rel="prefetch" href="/assets/js/81.9656cc8f.js"><link rel="prefetch" href="/assets/js/82.7c65b9cf.js"><link rel="prefetch" href="/assets/js/83.89d31fac.js"><link rel="prefetch" href="/assets/js/84.e152eb9d.js"><link rel="prefetch" href="/assets/js/85.ae8992fd.js"><link rel="prefetch" href="/assets/js/86.ad939af2.js"><link rel="prefetch" href="/assets/js/87.2fd2d5a1.js"><link rel="prefetch" href="/assets/js/88.cd7ccde8.js"><link rel="prefetch" href="/assets/js/89.6a0fba8b.js"><link rel="prefetch" href="/assets/js/90.681e3de2.js"><link rel="prefetch" href="/assets/js/91.3e0eb8b7.js"><link rel="prefetch" href="/assets/js/92.00126ff1.js"><link rel="prefetch" href="/assets/js/93.d131f558.js"><link rel="prefetch" href="/assets/js/94.95a3a402.js"><link rel="prefetch" href="/assets/js/95.604bc739.js"><link rel="prefetch" href="/assets/js/96.38fb9eef.js"><link rel="prefetch" href="/assets/js/97.ee7e84b4.js"><link rel="prefetch" href="/assets/js/98.dd6589d9.js"><link rel="prefetch" href="/assets/js/99.882d7314.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.271bc088.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4c261fea.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">NightWatch</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front-end/Basic/" class="nav-link">
+  前端基础
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/前端工程化/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/性能优化/" class="nav-link">
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/数据格式/" class="nav-link">
+  数据格式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/environment/" class="nav-link">
+  环境配置
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/mysql/" class="nav-link">
+  MySQL数据库
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/springboot/" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/computer/linux/" class="nav-link">
+  Linux操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/computer/windows/" class="nav-link">
+  Windows操作系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="AI" class="dropdown-title"><span class="title">AI</span> <span class="arrow down"></span></button> <button type="button" aria-label="AI" class="mobile-dropdown-title"><span class="title">AI</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ai/large-model.html" class="nav-link">
+  大模型
+</a></li><li class="dropdown-item"><!----> <a href="/ai/machine-learning.html" class="nav-link">
+  机器学习
+</a></li><li class="dropdown-item"><!----> <a href="/ai/deep-learning.html" class="nav-link">
+  深度学习
+</a></li><li class="dropdown-item"><!----> <a href="/ai/computer-vision.html" class="nav-link">
+  计算机视觉
+</a></li><li class="dropdown-item"><!----> <a href="/ai/NLP.html" class="nav-link">
+  自然语言处理
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/GIS原理/" class="nav-link">
+  GIS原理
+</a></li><li class="dropdown-item"><!----> <a href="/gis/WebGIS/" class="nav-link">
+  WebGIS开发
+</a></li><li class="dropdown-item"><!----> <a href="/gis/地图学/" class="nav-link">
+  地图学
+</a></li><li class="dropdown-item"><!----> <a href="/gis/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/gis/tools/" class="nav-link">
+  GIS工具
+</a></li></ul></div></div><div class="nav-item"><a href="/rong/" class="nav-link">
+  Rong
+</a></div><div class="nav-item"><a href="/others/" class="nav-link">
+  其他
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端开发" class="dropdown-title"><span class="title">前端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端开发" class="mobile-dropdown-title"><span class="title">前端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front-end/Basic/" class="nav-link">
+  前端基础
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/前端工程化/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/性能优化/" class="nav-link">
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/front-end/数据格式/" class="nav-link">
+  数据格式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端开发" class="dropdown-title"><span class="title">后端开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端开发" class="mobile-dropdown-title"><span class="title">后端开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/back-end/environment/" class="nav-link">
+  环境配置
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/mysql/" class="nav-link">
+  MySQL数据库
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/springboot/" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/back-end/docker/" class="nav-link">
+  Docker
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/computer/linux/" class="nav-link">
+  Linux操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/computer/windows/" class="nav-link">
+  Windows操作系统
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="AI" class="dropdown-title"><span class="title">AI</span> <span class="arrow down"></span></button> <button type="button" aria-label="AI" class="mobile-dropdown-title"><span class="title">AI</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ai/large-model.html" class="nav-link">
+  大模型
+</a></li><li class="dropdown-item"><!----> <a href="/ai/machine-learning.html" class="nav-link">
+  机器学习
+</a></li><li class="dropdown-item"><!----> <a href="/ai/deep-learning.html" class="nav-link">
+  深度学习
+</a></li><li class="dropdown-item"><!----> <a href="/ai/computer-vision.html" class="nav-link">
+  计算机视觉
+</a></li><li class="dropdown-item"><!----> <a href="/ai/NLP.html" class="nav-link">
+  自然语言处理
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="GIS开发" class="dropdown-title"><span class="title">GIS开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="GIS开发" class="mobile-dropdown-title"><span class="title">GIS开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gis/GIS原理/" class="nav-link">
+  GIS原理
+</a></li><li class="dropdown-item"><!----> <a href="/gis/WebGIS/" class="nav-link">
+  WebGIS开发
+</a></li><li class="dropdown-item"><!----> <a href="/gis/地图学/" class="nav-link">
+  地图学
+</a></li><li class="dropdown-item"><!----> <a href="/gis/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/gis/tools/" class="nav-link">
+  GIS工具
+</a></li></ul></div></div><div class="nav-item"><a href="/rong/" class="nav-link">
+  Rong
+</a></div><div class="nav-item"><a href="/others/" class="nav-link">
+  其他
+</a></div><div class="nav-item"><a href="/test/1.html" class="nav-link">
+  测试
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Machine Learning</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/ai/machine-learning/" aria-current="page" class="sidebar-link">♥机器学习♥</a></li><li><a href="/ai/machine-learning/Pytorch学习记录.html" class="active sidebar-link">Pytorch学习记录</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ai/machine-learning/Pytorch学习记录.html#简介" class="sidebar-link">简介</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ai/machine-learning/Pytorch学习记录.html#pytorch和tensorflow的对比" class="sidebar-link">PyTorch和TensorFlow的对比</a></li></ul></li><li class="sidebar-sub-header"><a href="/ai/machine-learning/Pytorch学习记录.html#环境搭建" class="sidebar-link">环境搭建</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ai/machine-learning/Pytorch学习记录.html#anaconda安装" class="sidebar-link">Anaconda安装</a></li><li class="sidebar-sub-header"><a href="/ai/machine-learning/Pytorch学习记录.html#pytorch安装" class="sidebar-link">Pytorch安装</a></li><li class="sidebar-sub-header"><a href="/ai/machine-learning/Pytorch学习记录.html#cuda和cudnn-安装" class="sidebar-link">CUDA和cuDNN 安装</a></li><li class="sidebar-sub-header"><a href="/ai/machine-learning/Pytorch学习记录.html#rocm安装-未完成" class="sidebar-link">ROCm安装（未完成）</a></li></ul></li><li class="sidebar-sub-header"><a href="/ai/machine-learning/Pytorch学习记录.html#tensor" class="sidebar-link">Tensor</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="pytorch学习记录"><a href="#pytorch学习记录" class="header-anchor">#</a> Pytorch学习记录</h1> <p><img src="https://stag-blog.oss-cn-beijing.aliyuncs.com/picture/image-20251031154219669.png" alt="image-20251031154219669"></p> <h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <p>PyTorch是Facebook人工智能研究员于2017年在Github上开源，底层用的C和C++，提供了python接口。</p> <h3 id="pytorch和tensorflow的对比"><a href="#pytorch和tensorflow的对比" class="header-anchor">#</a> PyTorch和TensorFlow的对比</h3> <p>Pytorch适合学术研究，tensorflow适合工业应用</p> <p>Pytorch采用动态图，tensorflow采用静态图</p> <ul><li>动态图：编号程序即可执行</li> <li>静态图：先搭建计算图，后运行；允许编辑器进行优化</li></ul> <p>Pytorch编程容易，tensorflow部署容易</p> <h2 id="环境搭建"><a href="#环境搭建" class="header-anchor">#</a> 环境搭建</h2> <p><strong>Ubuntu16.04+CUDA+cuDnn+Python3+pip3 Anaconda+Pytorch</strong></p> <p>实际操作环境：</p> <p>linux版本：Ubuntu20.04.1</p> <p>显卡型号：AMD RADEON RX 6950</p> <p>CPU型号：AMD 锐龙9 7950X CPU</p> <p>存储：2TB</p> <p>内存：64GB</p> <h3 id="anaconda安装"><a href="#anaconda安装" class="header-anchor">#</a> Anaconda安装</h3> <p>包管理工具：</p> <ul><li>conda是跨平台的包管理器和环境管理器</li> <li>Anaconda继承了conda和大量科学计算包的发行版</li> <li>Miniconda是轻量版的Anaconda，很多包用不上时可以选择</li></ul> <p>但是三者核心的conda命令都是完全一致的</p> <p>配置环境变量：E:\Environment\miniconda3\condabin ，添加到PATH</p> <p>查看conda 安装版本</p> <div class="language-bash extra-class"><pre class="language-bash"><code>conda <span class="token parameter variable">-V</span>
+</code></pre></div><h3 id="pytorch安装"><a href="#pytorch安装" class="header-anchor">#</a> Pytorch安装</h3> <p><strong>先进入conda创建的环境</strong></p> <p>安装Pytorch时需要根据操作系统、显卡类型、是否使用显卡，安装对应版本的安装包</p> <ol><li>Windows/Linux 系统 + NVIDIA 显卡（CUDA 加速）
+假设安装支持 CUDA 12.1 的版本（需先安装对应 NVIDIA 驱动和 CUDA 工具包）：</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>pip3 <span class="token function">install</span> torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+</code></pre></div><ol start="2"><li>Windows/Linux/macOS(Intel芯片)+仅CPU</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>pip3 <span class="token function">install</span> torch torchvision torchaudio <span class="token parameter variable">-i</span> https://pypi.tuna.tsinghua.edu.cn/simple/ 
+</code></pre></div><ol start="3"><li>macOS(Apple M1/M2/M3芯片，支持PMS加速)</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>pip3 <span class="token function">install</span> torch torchvision torchaudio
+</code></pre></div><ol start="4"><li>Linux+AMD显卡（ROCm加速），需先安装 ROCm 平台（如 5.7 版本）</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>pip3 <span class="token function">install</span> torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.7
+</code></pre></div><p>三个库的说明：</p> <ul><li>torch是核心库，是整个框架的基础</li> <li>torchvision是计算机视觉工具库</li> <li>torchaudio是音频处理工具库</li></ul> <p>加速镜像，添加参数：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token parameter variable">-i</span> https://pypi.tuna.tsinghua.edu.cn/simple/
+</code></pre></div><h3 id="cuda和cudnn-安装"><a href="#cuda和cudnn-安装" class="header-anchor">#</a> CUDA和cuDNN 安装</h3> <p><strong>CUDA是NVIDIA推出的并行计算平台和API模型，它使得显卡可以用于图像渲染和计算以外的</strong> <strong>目的，例如通用并行计算。PyTorch通过CUDA可以充分利用GPU的计算能力，加速深度神经网络&gt;的学习和推理过程。</strong></p> <ol><li>查看显卡驱动版本</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>nvidia-smi
+</code></pre></div><ol start="2"><li>从官网下载对应的CUDA版本安装包，CUDA版本小于等于显卡版本</li></ol> <p><a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="noopener noreferrer">CUDA官网地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <ol start="3"><li>执行安装包，第一次选择的路径下的文件夹为临时目录，安装完会消失</li> <li>查看是否安装成功</li></ol> <div class="language- extra-class"><pre class="language-text"><code>nvcc -V
+</code></pre></div><p><strong>cuDNN是CUDA的扩展库，专门针对深度神经网络中的基础操作提供高度优化的实现方式，</strong> <strong>例如卷积、池化、规范化以及激活层的前向和后向过 程。使用cuDNN可以大大提高深度学习模型在GPU上的运行效率。</strong></p> <p><a href="https://developer.nvidia.com/cudnn" target="_blank" rel="noopener noreferrer">cuDNN下载地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <ol><li><p>下载cuDNN安装包，需要对应CUDA版本</p></li> <li><p>将以下文件夹复制到CUDA安装路径</p></li></ol> <p><img src="https://i-blog.csdnimg.cn/direct/3a30242ac9eb4e15a126d6190a5f732c.png" alt="在这里插入图片描述"></p> <h3 id="rocm安装-未完成"><a href="#rocm安装-未完成" class="header-anchor">#</a> ROCm安装（未完成）</h3> <p>ROCm是AMD对标NVIDIA CUDA的解决方案</p> <p>机器学习问题的构成元素</p> <p>样本、模型、训练、测试、推理</p> <ol><li>更新系统软件包列表并升级已安装软件</li></ol> <div class="language- extra-class"><pre class="language-text"><code>sudo apt update &amp;&amp; sudo apt upgrade 
+</code></pre></div><ol start="2"><li>安装两个必要工具，wget用于从网络下载文件，gnupg2 用于加密</li></ol> <div class="language- extra-class"><pre class="language-text"><code>sudo apt install wget gnupg2 
+</code></pre></div><ol start="3"><li>下载AMD显卡驱动包，在工作站  /usr/local/sbin 目录下</li></ol> <div class="language- extra-class"><pre class="language-text"><code>wget https://repo.radeon.com/amdgpu-install/23.40.2/ubuntu/jammy/amdgpu-install_6.0.60002-1_all.deb
+</code></pre></div><ol start="4"><li>安装下载好的驱动包</li></ol> <div class="language- extra-class"><pre class="language-text"><code>sudo apt install ./amdgpu-install_6.0.60002-1_all.deb
+</code></pre></div><ol start="5"><li>安装后驱动后，安装用例</li></ol> <div class="language- extra-class"><pre class="language-text"><code>#列出可用的用例，根据需要选择合适用例
+sudo amdgpu-install --list-usecase
+ 
+#这里我们只安装rocm,不安装dkms（不动原有的驱动）
+sudo amdgpu-install --usecase=rocm --no-dkms
+ 
+ 
+#添加用户组并重启
+sudo usermod -a -G render $LOGNAME
+sudo usermod -a -G video $LOGNAME
+sudo reboot
+</code></pre></div><ol start="6"><li>重启系统，查看显卡信息</li></ol> <div class="language- extra-class"><pre class="language-text"><code>rocm-smi
+</code></pre></div><h2 id="tensor"><a href="#tensor" class="header-anchor">#</a> Tensor</h2> <p>Tensor  Variable  nn.Module</p> <p>张量是用于描述多维空间数据的，标量对应0维张量、向量对应1维张量、矩阵对应二维张量</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/6/2025, 9:00:15 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ai/machine-learning/" class="prev router-link-active">
+        ♥机器学习♥
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.152851cd.js" defer></script><script src="/assets/js/2.4829a41e.js" defer></script><script src="/assets/js/1.21e39df5.js" defer></script><script src="/assets/js/27.b2aec021.js" defer></script>
+  </body>
+</html>
